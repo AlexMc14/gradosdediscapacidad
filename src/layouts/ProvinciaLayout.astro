@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { withBase } from '@lib/utils';
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
 import Button from '@components/ui/Button.astro';
@@ -50,8 +51,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <div class="container">
         <ol>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/provincias">Provincias</a></li>
+          <li><a href={withBase("/")}>Inicio</a></li>
+          <li><a href={withBase("/provincias")}>Provincias</a></li>
           <li aria-current="page">{provincia.nombre}</li>
         </ol>
       </div>
@@ -71,7 +72,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
             <span class="badge">✓ Presencial u Online</span>
           </div>
           <div class="hero-cta">
-            <Button href="/contacto" variant="primary" size="lg">
+            <Button href={withBase("/contacto")} variant="primary" size="lg">
               Solicitar Presupuesto en {provincia.nombre}
             </Button>
           </div>
@@ -98,7 +99,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
                 <p class="mt-4"><strong>Cobertura:</strong></p>
                 <p>{provincia.capital} y toda la provincia</p>
               </div>
-              <Button href="/contacto" variant="primary" class="w-full mt-4">
+              <Button href={withBase("/contacto")} variant="primary" class="w-full mt-4">
                 Solicitar Presupuesto
               </Button>
             </div>
@@ -106,10 +107,10 @@ const breadcrumbSchema = generateBreadcrumbSchema([
             <div class="sidebar-card">
               <h3>Servicios en {provincia.nombre}</h3>
               <ul class="services-list">
-                <li><a href="/servicios/peritaje-medico">Peritaje Médico</a></li>
-                <li><a href="/servicios/valoracion-discapacidad">Valoración de Discapacidad</a></li>
-                <li><a href="/servicios/revision-grado">Revisión de Grado</a></li>
-                <li><a href="/servicios/recursos-reclamaciones">Recursos y Reclamaciones</a></li>
+                <li><a href={withBase("/servicios/peritaje-medico")}>Peritaje Médico</a></li>
+                <li><a href={withBase("/servicios/valoracion-discapacidad")}>Valoración de Discapacidad</a></li>
+                <li><a href={withBase("/servicios/revision-grado")}>Revisión de Grado</a></li>
+                <li><a href={withBase("/servicios/recursos-reclamaciones")}>Recursos y Reclamaciones</a></li>
               </ul>
             </div>
           </aside>
@@ -122,7 +123,7 @@ const breadcrumbSchema = generateBreadcrumbSchema([
       <div class="container">
         <h2>¿Necesitas Ayuda en {provincia.nombre}?</h2>
         <p>Nuestro equipo de expertos está disponible para atenderte</p>
-        <Button href="/contacto" variant="primary" size="lg">
+        <Button href={withBase("/contacto")} variant="primary" size="lg">
           Solicitar Consulta Gratuita
         </Button>
       </div>

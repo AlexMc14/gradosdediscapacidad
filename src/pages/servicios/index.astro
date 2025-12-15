@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 import serviciosData from '@data/servicios.json';
 import { generateFAQSchema } from '@lib/schema-generators';
 import SchemaOrg from '@components/seo/SchemaOrg.astro';
@@ -161,7 +162,7 @@ const faqSchema = generateFAQSchema({ questions: faqData });
     <div class="container">
       <h2>¿Necesitas Ayuda con Tu Caso?</h2>
       <p>Solicita tu consulta gratuita y te asesoraremos sin compromiso</p>
-      <a href="/contacto" class="cta-button">Solicitar Consulta Gratuita</a>
+      <a href={withBase("/contacto")} class="cta-button">Solicitar Consulta Gratuita</a>
     </div>
   </section>
 </PageLayout>

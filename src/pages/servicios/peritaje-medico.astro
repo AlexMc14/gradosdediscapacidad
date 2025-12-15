@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 import { generateFAQSchema } from '@lib/schema-generators';
 import SchemaOrg from '@components/seo/SchemaOrg.astro';
 
@@ -172,7 +173,7 @@ const faqSchema = generateFAQSchema({ questions: faqData });
           <div class="cta-card">
             <h3>¿Necesitas un Peritaje Médico?</h3>
             <p>Solicita tu consulta gratuita y analizaremos tu caso sin compromiso.</p>
-            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+            <a href={withBase("/contacto")} class="cta-button">Consulta Gratuita</a>
           </div>
 
           <div class="info-card">
@@ -221,7 +222,7 @@ const faqSchema = generateFAQSchema({ questions: faqData });
     <div class="container">
       <h2>¿Listo para Iniciar Tu Peritaje Médico?</h2>
       <p>Contacta con nosotros y comienza tu proceso hoy mismo</p>
-      <a href="/contacto" class="cta-button-large">Solicitar Presupuesto Gratuito</a>
+      <a href={withBase("/contacto")} class="cta-button-large">Solicitar Presupuesto Gratuito</a>
     </div>
   </section>
 </PageLayout>

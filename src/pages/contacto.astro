@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 import ContactForm from '@components/forms/ContactForm.astro';
 import { generateFAQSchema } from '@lib/schema-generators';
 import SchemaOrg from '@components/seo/SchemaOrg.astro';
@@ -151,8 +152,8 @@ const faqSchema = generateFAQSchema({ questions: faqData });
       <h2>¿Prefieres Conocer Más Sobre Nuestros Servicios?</h2>
       <p>Explora toda la información sobre peritaje médico y valoración de discapacidad</p>
       <div class="cta-buttons">
-        <a href="/servicios" class="cta-button primary">Ver Servicios</a>
-        <a href="/blog" class="cta-button secondary">Leer Blog</a>
+        <a href={withBase("/servicios")} class="cta-button primary">Ver Servicios</a>
+        <a href={withBase("/blog")} class="cta-button secondary">Leer Blog</a>
       </div>
     </div>
   </section>

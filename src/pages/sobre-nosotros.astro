@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 ---
 
 <PageLayout
@@ -282,7 +283,7 @@ import PageLayout from '@layouts/PageLayout.astro';
       </div>
 
       <div class="cta-coverage">
-        <a href="/provincias" class="link-button">Ver Todas las Provincias</a>
+        <a href={withBase("/provincias")} class="link-button">Ver Todas las Provincias</a>
       </div>
     </div>
   </section>
@@ -292,7 +293,7 @@ import PageLayout from '@layouts/PageLayout.astro';
     <div class="container">
       <h2>¿Quieres Conocer Más Sobre Tu Caso?</h2>
       <p>Solicita tu consulta gratuita y te asesoraremos de forma personalizada</p>
-      <a href="/contacto" class="cta-button">Contactar Ahora</a>
+      <a href={withBase("/contacto")} class="cta-button">Contactar Ahora</a>
     </div>
   </section>
 </PageLayout>

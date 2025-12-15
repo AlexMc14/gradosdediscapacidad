@@ -1,5 +1,6 @@
 ---
 import Button from '@components/ui/Button.astro';
+import { withBase } from '@lib/utils';
 import provinciasData from '@data/provincias.json';
 
 const provinciasOrdenadas = [...provinciasData].sort((a, b) =>
@@ -99,7 +100,7 @@ const provinciasOrdenadas = [...provinciasData].sort((a, b) =>
           />
           <span>
             He leído y acepto la
-            <a href="/legal/privacidad" target="_blank">Política de Privacidad</a>
+            <a href={withBase("/legal/privacidad")} target="_blank">Política de Privacidad</a>
             y el tratamiento de mis datos personales <span class="required">*</span>
           </span>
         </label>

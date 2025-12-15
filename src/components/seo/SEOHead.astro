@@ -46,8 +46,8 @@ const pageTitle = title.includes('|') ? title : `${title} | Grados de Discapacid
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+<link rel="alternate icon" type="image/x-icon" href={withBase("/favicon.ico")} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />

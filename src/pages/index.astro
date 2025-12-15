@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 import Button from '@components/ui/Button.astro';
 import serviciosData from '@data/servicios.json';
 import testimoniosData from '@data/testimonios.json';
@@ -43,10 +44,10 @@ const featuredPosts = allPosts
             </div>
           </div>
           <div class="hero-cta">
-            <Button href="/contacto" variant="primary" size="lg">
+            <Button href={withBase("/contacto")} variant="primary" size="lg">
               Solicitar Presupuesto Gratuito
             </Button>
-            <Button href="/servicios" variant="outline" size="lg">
+            <Button href={withBase("/servicios")} variant="outline" size="lg">
               Ver Servicios
             </Button>
           </div>
@@ -149,7 +150,7 @@ const featuredPosts = allPosts
       </div>
       <div class="faq-cta">
         <p>¿Tienes más preguntas?</p>
-        <Button href="/contacto" variant="primary">
+        <Button href={withBase("/contacto")} variant="primary">
           Contacta con Nosotros
         </Button>
       </div>
@@ -177,7 +178,7 @@ const featuredPosts = allPosts
           ))}
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-          <Button href="/blog" variant="outline">
+          <Button href={withBase("/blog")} variant="outline">
             Ver Todos los Artículos
           </Button>
         </div>
@@ -191,7 +192,7 @@ const featuredPosts = allPosts
       <div class="cta-content">
         <h2>¿Necesitas Ayuda con tu Grado de Discapacidad?</h2>
         <p>Solicita una consulta gratuita y te asesoraremos sin compromiso</p>
-        <Button href="/contacto" variant="primary" size="lg">
+        <Button href={withBase("/contacto")} variant="primary" size="lg">
           Solicitar Consulta Gratuita
         </Button>
         <p class="cta-info">

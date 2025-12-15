@@ -1,5 +1,6 @@
 ---
 import provinciasData from '@data/provincias.json';
+import { withBase } from '@lib/utils';
 
 // Obtener provincias principales (top 10 por población)
 const provinciasDestacadas = [...provinciasData]
@@ -14,7 +15,7 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <!-- Columna 1: Info de la empresa -->
       <div class="footer-col">
-        <img src="/logo.svg" alt="Grados de Discapacidad" width="200" height="60" class="footer-logo" />
+        <img src={withBase("/logo.svg")} alt="Grados de Discapacidad" width="200" height="60" class="footer-logo" />
         <p class="footer-description">
           Expertos en peritaje médico y valoración de grados de discapacidad en toda España.
           Asesoramiento profesional y confidencial.
@@ -28,11 +29,11 @@ const currentYear = new Date().getFullYear();
       <div class="footer-col">
         <h3 class="footer-heading">Servicios</h3>
         <ul class="footer-links">
-          <li><a href="/servicios/peritaje-medico">Peritaje Médico</a></li>
-          <li><a href="/servicios/valoracion-discapacidad">Valoración de Discapacidad</a></li>
-          <li><a href="/servicios/incapacidad-laboral">Incapacidad Laboral</a></li>
-          <li><a href="/servicios/revision-grado">Revisión de Grado</a></li>
-          <li><a href="/servicios/recursos-reclamaciones">Recursos y Reclamaciones</a></li>
+          <li><a href={withBase("/servicios/peritaje-medico")}>Peritaje Médico</a></li>
+          <li><a href={withBase("/servicios/valoracion-discapacidad")}>Valoración de Discapacidad</a></li>
+          <li><a href={withBase("/servicios/incapacidad-laboral")}>Incapacidad Laboral</a></li>
+          <li><a href={withBase("/servicios/revision-grado")}>Revisión de Grado</a></li>
+          <li><a href={withBase("/servicios/recursos-reclamaciones")}>Recursos y Reclamaciones</a></li>
         </ul>
       </div>
 
@@ -40,12 +41,12 @@ const currentYear = new Date().getFullYear();
       <div class="footer-col">
         <h3 class="footer-heading">Información</h3>
         <ul class="footer-links">
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-          <li><a href="/legal/aviso-legal">Aviso Legal</a></li>
-          <li><a href="/legal/privacidad">Política de Privacidad</a></li>
-          <li><a href="/legal/cookies">Política de Cookies</a></li>
+          <li><a href={withBase("/blog")}>Blog</a></li>
+          <li><a href={withBase("/sobre-nosotros")}>Sobre Nosotros</a></li>
+          <li><a href={withBase("/contacto")}>Contacto</a></li>
+          <li><a href={withBase("/legal/aviso-legal")}>Aviso Legal</a></li>
+          <li><a href={withBase("/legal/privacidad")}>Política de Privacidad</a></li>
+          <li><a href={withBase("/legal/cookies")}>Política de Cookies</a></li>
         </ul>
       </div>
 
@@ -60,7 +61,7 @@ const currentYear = new Date().getFullYear();
               </a>
             </li>
           ))}
-          <li><a href="/provincias"><strong>Ver todas las provincias →</strong></a></li>
+          <li><a href={withBase("/provincias")}><strong>Ver todas las provincias →</strong></a></li>
         </ul>
       </div>
     </div>

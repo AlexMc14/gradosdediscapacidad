@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { withBase } from '@lib/utils';
 import { generateFAQSchema } from '@lib/schema-generators';
 import SchemaOrg from '@components/seo/SchemaOrg.astro';
 
@@ -335,7 +336,7 @@ const faqSchema = generateFAQSchema({ questions: faqData });
           <div class="cta-card">
             <h3>¿Te Han Denegado?</h3>
             <p>Analiza tu caso gratis. Te decimos si procede recurrir y qué probabilidades tienes.</p>
-            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+            <a href={withBase("/contacto")} class="cta-button">Consulta Gratuita</a>
           </div>
 
           <div class="estadisticas-card">
@@ -408,7 +409,7 @@ const faqSchema = generateFAQSchema({ questions: faqData });
     <div class="container">
       <h2>¿Te Han Denegado la Discapacidad?</h2>
       <p>No te rindas. Con un buen recurso puedes conseguir el reconocimiento que mereces</p>
-      <a href="/contacto" class="cta-button-large">Analizar Mi Caso Gratis</a>
+      <a href={withBase("/contacto")} class="cta-button-large">Analizar Mi Caso Gratis</a>
     </div>
   </section>
 </PageLayout>
