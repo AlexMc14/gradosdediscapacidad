@@ -3,7 +3,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gradosdediscapacidad.es',
+  site: 'https://alexmc14.github.io',
+  base: '/gradosdediscapacidad',
   output: 'static',
   integrations: [
     sitemap({
