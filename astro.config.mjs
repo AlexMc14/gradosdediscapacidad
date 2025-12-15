@@ -20,9 +20,4 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp',
     },
   },
-  vite: {
-    build: {
-      cssMinify: 'lightningcss',
-    },
-  },
 });
