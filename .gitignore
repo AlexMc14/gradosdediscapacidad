@@ -64,3 +64,17 @@ coverage/
 # Astro specific
 .vercel/
 .netlify/
+
+# Scripts temporales
+generate-provincias.js
+generate-provincias-v2.js
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Lock files (opcional - mantener solo uno)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
