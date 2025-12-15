@@ -78,3 +78,22 @@ export function sanitizeString(str: string): string {
     .replace(/'/g, '&#x27;')
     .replace(/\//g, '&#x2F;');
 }
+
+/**
+ * Get the base URL for the site (useful for GitHub Pages deployment)
+ */
+export const getBaseUrl = () => {
+  return import.meta.env.BASE_URL || '/';
+};
+
+/**
+ * Create a URL with the correct base path
+ */
+export const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  // Ensure path starts with /
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  // Remove trailing slash from base if it exists
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${cleanBase}${cleanPath}`;
+};

@@ -1,29 +1,38 @@
 ---
 import Button from '@components/ui/Button.astro';
+import { withBase } from '@lib/utils';
+
+const logoUrl = withBase('/logo.svg');
+const homeUrl = withBase('/');
+const serviciosUrl = withBase('/servicios');
+const provinciasUrl = withBase('/provincias');
+const blogUrl = withBase('/blog');
+const sobreNosotrosUrl = withBase('/sobre-nosotros');
+const contactoUrl = withBase('/contacto');
 ---
 
 <header class="header">
   <div class="container">
     <div class="header-content">
       <!-- Logo -->
-      <a href="/" class="logo-link">
-        <img src="/logo.svg" alt="Grados de Discapacidad" width="200" height="60" class="logo" />
+      <a href={homeUrl} class="logo-link">
+        <img src={logoUrl} alt="Grados de Discapacidad" width="200" height="60" class="logo" />
       </a>
 
       <!-- Navigation Desktop -->
       <nav class="nav-desktop">
         <ul class="nav-list">
-          <li><a href="/servicios">Servicios</a></li>
-          <li><a href="/provincias">Provincias</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-          <li><a href="/contacto">Contacto</a></li>
+          <li><a href={serviciosUrl}>Servicios</a></li>
+          <li><a href={provinciasUrl}>Provincias</a></li>
+          <li><a href={blogUrl}>Blog</a></li>
+          <li><a href={sobreNosotrosUrl}>Sobre Nosotros</a></li>
+          <li><a href={contactoUrl}>Contacto</a></li>
         </ul>
       </nav>
 
       <!-- CTA Button -->
       <div class="header-cta">
-        <Button href="/contacto" variant="primary" size="md">
+        <Button href={contactoUrl} variant="primary" size="md">
           Solicitar Presupuesto
         </Button>
       </div>
@@ -43,14 +52,14 @@ import Button from '@components/ui/Button.astro';
   <div class="mobile-menu" id="mobile-menu">
     <nav class="mobile-nav">
       <ul class="mobile-nav-list">
-        <li><a href="/servicios">Servicios</a></li>
-        <li><a href="/provincias">Provincias</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-        <li><a href="/contacto">Contacto</a></li>
+        <li><a href={serviciosUrl}>Servicios</a></li>
+        <li><a href={provinciasUrl}>Provincias</a></li>
+        <li><a href={blogUrl}>Blog</a></li>
+        <li><a href={sobreNosotrosUrl}>Sobre Nosotros</a></li>
+        <li><a href={contactoUrl}>Contacto</a></li>
       </ul>
       <div class="mobile-cta">
-        <Button href="/contacto" variant="primary" size="lg">
+        <Button href={contactoUrl} variant="primary" size="lg">
           Solicitar Presupuesto
         </Button>
       </div>
