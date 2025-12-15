@@ -1,0 +1,24 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Símbolo combinado: Cruz médica + Accesibilidad -->
+  <g id="logo-symbol">
+    <!-- Círculo exterior -->
+    <circle cx="30" cy="30" r="24" fill="#059669" opacity="0.1"/>
+
+    <!-- Cruz médica -->
+    <rect x="27" y="18" width="6" height="24" rx="1" fill="#1E3A8A"/>
+    <rect x="18" y="27" width="24" height="6" rx="1" fill="#1E3A8A"/>
+
+    <!-- Símbolo de accesibilidad (persona estilizada) -->
+    <circle cx="30" cy="22" r="3" fill="#059669"/>
+    <path d="M30 26 L30 36 M30 30 L26 34 M30 30 L34 34 M27 36 L27 42 M33 36 L33 42"
+          stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Texto del logo -->
+  <text x="60" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A8A">
+    GRADOS DE
+  </text>
+  <text x="60" y="42" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#059669">
+    DISCAPACIDAD
+  </text>
+</svg>

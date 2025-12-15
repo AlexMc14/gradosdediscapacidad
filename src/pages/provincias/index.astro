@@ -1,0 +1,302 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import provinciasData from '@data/provincias.json';
+
+// Ordenar provincias por población (descendente)
+const provinciasPorPoblacion = [...provinciasData].sort((a, b) => (b.poblacion || 0) - (a.poblacion || 0));
+
+// Agrupar por comunidad autónoma
+const provinciasPorComunidad = provinciasData.reduce((acc, provincia) => {
+  if (!acc[provincia.comunidad]) {
+    acc[provincia.comunidad] = [];
+  }
+  acc[provincia.comunidad].push(provincia);
+  return acc;
+}, {} as Record<string, typeof provinciasData>);
+
+const comunidades = Object.keys(provinciasPorComunidad).sort();
+---
+
+<PageLayout
+  title="Peritaje Médico Discapacidad en Todas las Provincias de España"
+  description="Servicios de peritaje médico y valoración de grados de discapacidad en todas las provincias de España. Encuentra tu provincia y solicita consulta gratuita."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Peritaje Médico en Toda España</h1>
+      <p class="hero-description">
+        Ofrecemos servicios especializados de peritaje médico y valoración de grados de discapacidad
+        en las **52 provincias** de España. Encuentra tu provincia y solicita una consulta gratuita.
+      </p>
+    </div>
+  </section>
+
+  <!-- Provincias Destacadas -->
+  <section class="provincias-destacadas">
+    <div class="container">
+      <h2>Provincias Principales</h2>
+      <p class="section-description">Nuestras ubicaciones con mayor demanda</p>
+
+      <div class="provincias-grid">
+        {provinciasPorPoblacion.slice(0, 12).map((provincia) => (
+          <a href={`/provincias/${provincia.slug}`} class="provincia-card">
+            <div class="provincia-info">
+              <h3>{provincia.nombre}</h3>
+              <p class="comunidad">{provincia.comunidad}</p>
+              <p class="capital">Capital: {provincia.capital}</p>
+            </div>
+            <div class="provincia-arrow">→</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Todas las Provincias por Comunidad -->
+  <section class="provincias-por-comunidad">
+    <div class="container">
+      <h2>Todas las Provincias por Comunidad Autónoma</h2>
+
+      <div class="comunidades-list">
+        {comunidades.map((comunidad) => (
+          <div class="comunidad-section">
+            <h3>{comunidad}</h3>
+            <ul class="provincias-list">
+              {provinciasPorComunidad[comunidad]
+                .sort((a, b) => a.nombre.localeCompare(b.nombre))
+                .map((provincia) => (
+                  <li>
+                    <a href={`/provincias/${provincia.slug}`}>
+                      {provincia.nombre}
+                      <span class="capital-small">({provincia.capital})</span>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿No Encuentras Tu Provincia?</h2>
+      <p>Contacta con nosotros y te ayudaremos independientemente de tu ubicación</p>
+      <a href="/contacto" class="cta-button">Contactar Ahora</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .provincias-destacadas {
+    padding: var(--space-16) 0;
+  }
+
+  .provincias-destacadas h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-description {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: var(--space-12);
+  }
+
+  .provincias-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .provincias-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .provincias-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .provincia-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .provincia-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .provincia-info h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .comunidad {
+    color: var(--medium-gray);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+  }
+
+  .capital {
+    color: var(--dark-gray);
+    font-size: var(--text-sm);
+  }
+
+  .provincia-arrow {
+    color: var(--primary-green);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+  }
+
+  .provincias-por-comunidad {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .provincias-por-comunidad h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .comunidades-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .comunidades-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .comunidades-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .comunidad-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .comunidad-section h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--light-green);
+  }
+
+  .provincias-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .provincias-list li {
+    margin-bottom: var(--space-3);
+  }
+
+  .provincias-list a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    transition: color var(--transition-fast);
+  }
+
+  .provincias-list a:hover {
+    color: #047857;
+    text-decoration: underline;
+  }
+
+  .capital-small {
+    color: var(--medium-gray);
+    font-size: var(--text-sm);
+    font-weight: var(--font-normal);
+    margin-left: var(--space-2);
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

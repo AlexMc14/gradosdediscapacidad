@@ -1,0 +1,172 @@
+---
+import provinciasData from '@data/provincias.json';
+
+// Obtener provincias principales (top 10 por población)
+const provinciasDestacadas = [...provinciasData]
+  .sort((a, b) => (b.poblacion || 0) - (a.poblacion || 0))
+  .slice(0, 10);
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Columna 1: Info de la empresa -->
+      <div class="footer-col">
+        <img src="/logo.svg" alt="Grados de Discapacidad" width="200" height="60" class="footer-logo" />
+        <p class="footer-description">
+          Expertos en peritaje médico y valoración de grados de discapacidad en toda España.
+          Asesoramiento profesional y confidencial.
+        </p>
+        <div class="footer-info">
+          <p><strong>Horario de atención:</strong><br />Lunes a Viernes: 9:00 - 20:00</p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Enlaces rápidos -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Servicios</h3>
+        <ul class="footer-links">
+          <li><a href="/servicios/peritaje-medico">Peritaje Médico</a></li>
+          <li><a href="/servicios/valoracion-discapacidad">Valoración de Discapacidad</a></li>
+          <li><a href="/servicios/incapacidad-laboral">Incapacidad Laboral</a></li>
+          <li><a href="/servicios/revision-grado">Revisión de Grado</a></li>
+          <li><a href="/servicios/recursos-reclamaciones">Recursos y Reclamaciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Enlaces útiles -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Información</h3>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/legal/aviso-legal">Aviso Legal</a></li>
+          <li><a href="/legal/privacidad">Política de Privacidad</a></li>
+          <li><a href="/legal/cookies">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Provincias destacadas -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Cobertura Nacional</h3>
+        <ul class="footer-links">
+          {provinciasDestacadas.map((provincia) => (
+            <li>
+              <a href={`/provincias/${provincia.slug}`}>
+                {provincia.nombre}
+              </a>
+            </li>
+          ))}
+          <li><a href="/provincias"><strong>Ver todas las provincias →</strong></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {currentYear} Grados de Discapacidad. Todos los derechos reservados.
+      </p>
+      <p class="footer-disclaimer">
+        La información proporcionada en este sitio web tiene carácter informativo y no sustituye el asesoramiento profesional personalizado.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+  }
+
+  .footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: var(--space-4);
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-description {
+    color: var(--light-gray);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+  }
+
+  .footer-info {
+    color: var(--light-gray);
+    font-size: var(--text-sm);
+  }
+
+  .footer-heading {
+    color: var(--white);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-8);
+    text-align: center;
+  }
+
+  .footer-copyright {
+    color: var(--light-gray);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-disclaimer {
+    color: var(--medium-gray);
+    font-size: var(--text-xs);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>

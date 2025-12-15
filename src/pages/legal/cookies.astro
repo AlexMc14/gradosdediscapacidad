@@ -1,0 +1,165 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+
+const lastUpdated = new Date('2025-01-15');
+---
+
+<PageLayout
+  title="Política de Cookies | Grados de Discapacidad"
+  description="Política de Cookies de Grados de Discapacidad. Información sobre el uso de cookies en nuestro sitio web."
+  noindex={true}
+>
+  <section class="legal-page">
+    <div class="container">
+      <h1>Política de Cookies</h1>
+      <p class="last-updated">Última actualización: {lastUpdated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <div class="legal-content">
+        <h2>1. ¿Qué son las Cookies?</h2>
+        <p>
+          Una cookie es un fichero que se descarga en tu ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.
+        </p>
+
+        <h2>2. Tipos de Cookies</h2>
+
+        <h3>2.1. Según la entidad que las gestione</h3>
+        <ul>
+          <li><strong>Cookies propias:</strong> Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio gestionado por el propio editor y desde el que se presta el servicio solicitado por el usuario.</li>
+          <li><strong>Cookies de terceros:</strong> Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos a través de las cookies.</li>
+        </ul>
+
+        <h3>2.2. Según el plazo de tiempo que permanecen activadas</h3>
+        <ul>
+          <li><strong>Cookies de sesión:</strong> Son un tipo de cookies diseñadas para recabar y almacenar datos mientras el usuario accede a una página web.</li>
+          <li><strong>Cookies persistentes:</strong> Son un tipo de cookies en el que los datos siguen almacenados en el terminal y pueden ser accedidos y tratados durante un período definido por el responsable de la cookie.</li>
+        </ul>
+
+        <h3>2.3. Según su finalidad</h3>
+        <ul>
+          <li><strong>Cookies técnicas:</strong> Son aquellas que permiten al usuario la navegación a través de una página web y la utilización de las diferentes opciones o servicios que en ella existan.</li>
+          <li><strong>Cookies de personalización:</strong> Son aquellas que permiten al usuario acceder al servicio con algunas características de carácter general predefinidas en función de una serie de criterios en el terminal del usuario.</li>
+          <li><strong>Cookies de análisis:</strong> Son aquellas que permiten al responsable de las mismas el seguimiento y análisis del comportamiento de los usuarios de los sitios web a los que están vinculadas.</li>
+          <li><strong>Cookies publicitarias:</strong> Son aquellas que permiten la gestión de los espacios publicitarios que, en su caso, el editor haya incluido en una página web.</li>
+        </ul>
+
+        <h2>3. Cookies Utilizadas en Este Sitio Web</h2>
+        <p>Este sitio web utiliza las siguientes cookies:</p>
+
+        <h3>3.1. Cookies Técnicas (Necesarias)</h3>
+        <p>
+          Estas cookies son esenciales para que el sitio web funcione correctamente y no se pueden desactivar en nuestros sistemas. Normalmente solo se configuran en respuesta a acciones realizadas por usted, como establecer sus preferencias de privacidad, iniciar sesión o rellenar formularios.
+        </p>
+
+        <h3>3.2. Cookies de Análisis (Opcionales)</h3>
+        <p>
+          Utilizamos Google Analytics para recopilar información sobre cómo los visitantes utilizan nuestro sitio web. Usamos esta información para elaborar informes y ayudarnos a mejorar el sitio web. Las cookies recopilan información de forma anónima.
+        </p>
+
+        <h2>4. Gestión de Cookies</h2>
+        <p>
+          Puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones de su navegador de internet. En caso de que no permita la instalación de cookies en su navegador es posible que no pueda acceder a alguna de las secciones de nuestra web.
+        </p>
+
+        <h3>Configuración en los principales navegadores:</h3>
+        <ul>
+          <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+          <li><strong>Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio</li>
+          <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies y datos de sitios web</li>
+          <li><strong>Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies y permisos del sitio</li>
+        </ul>
+
+        <h2>5. Actualización de la Política de Cookies</h2>
+        <p>
+          Esta Política de Cookies puede ser modificada en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos.
+        </p>
+        <p>
+          Se recomienda a los usuarios que visiten esta página periódicamente para estar informados sobre cualquier cambio.
+        </p>
+
+        <h2>6. Contacto</h2>
+        <p>
+          Para cualquier duda o consulta sobre esta Política de Cookies, puede contactar con nosotros a través de nuestro <a href="/contacto">formulario de contacto</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-16) 0;
+    background-color: var(--white);
+  }
+
+  .legal-page h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .last-updated {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: var(--space-12);
+    font-style: italic;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--light-gray);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+  }
+
+  .legal-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-2xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--primary-green);
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content h3 {
+    color: var(--primary-green);
+    font-size: var(--text-xl);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .legal-content p,
+  .legal-content li {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  .legal-content ul {
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .legal-content li {
+    margin-bottom: var(--space-2);
+  }
+
+  .legal-content a {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .legal-content a:hover {
+    color: #047857;
+  }
+
+  .legal-content strong {
+    color: var(--primary-blue);
+    font-weight: var(--font-semibold);
+  }
+</style>

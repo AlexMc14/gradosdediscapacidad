@@ -1,0 +1,926 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Cuál es la diferencia entre incapacidad permanente total y absoluta?',
+    answer: 'La incapacidad permanente total impide realizar tu profesión habitual pero puedes dedicarte a otra distinta. La absoluta impide cualquier tipo de trabajo o profesión. La total da el 55% de la base reguladora, mientras que la absoluta da el 100%.',
+  },
+  {
+    question: '¿Puedo solicitar incapacidad permanente mientras trabajo?',
+    answer: 'Sí, puedes solicitarla estando de alta laboral. De hecho, es recomendable hacerlo antes de llegar a una situación de baja prolongada que pueda empeorar tu situación económica y médica.',
+  },
+  {
+    question: '¿Cuánto tarda la resolución de incapacidad permanente?',
+    answer: 'El INSS tiene un plazo máximo de 135 días desde la solicitud. Si transcurre este tiempo sin respuesta, se puede considerar desestimada y presentar reclamación previa o demanda judicial.',
+  },
+  {
+    question: '¿Qué hago si me deniegan la incapacidad?',
+    answer: 'Tienes 30 días para presentar reclamación previa ante el INSS y posteriormente, si es denegada, puedes acudir a la vía judicial. Nuestro informe pericial es fundamental en esta fase para reforzar tu caso.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Incapacidad Laboral Permanente | Peritaje Médico Especializado"
+  description="Asesoramiento y peritaje médico para incapacidad laboral permanente. Te ayudamos a conseguir la pensión que te corresponde. Expertos en total, absoluta y gran invalidez."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Incapacidad Laboral Permanente</h1>
+      <p class="hero-description">
+        Te ayudamos a conseguir el reconocimiento de incapacidad laboral permanente con informes
+        periciales médicos que fundamentan tu caso ante el INSS o los tribunales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Qué es la Incapacidad Permanente?</h2>
+          <p>
+            La incapacidad permanente es la situación del trabajador que, después de haber sido dado
+            de alta médicamente, presenta reducciones anatómicas o funcionales graves que disminuyen
+            o anulan su capacidad laboral de forma presumiblemente definitiva.
+          </p>
+          <p>
+            A diferencia del certificado de discapacidad, la incapacidad permanente sí da derecho a
+            una pensión económica mensual, pero limita o impide la realización de actividad laboral
+            según el grado reconocido.
+          </p>
+
+          <h2>Grados de Incapacidad Permanente</h2>
+
+          <div class="grados-ip">
+            <div class="grado-ip-card">
+              <div class="grado-ip-header parcial">
+                <h3>Incapacidad Permanente Parcial</h3>
+                <div class="pension-amount">Indemnización única</div>
+              </div>
+              <div class="grado-ip-content">
+                <p class="definition">
+                  Ocasiona al trabajador una disminución no inferior al 33% en su rendimiento
+                  normal para su profesión habitual, sin impedirle realizar las tareas fundamentales.
+                </p>
+                <ul class="caracteristicas">
+                  <li>Puedes seguir trabajando en tu profesión</li>
+                  <li>Cobras indemnización de 24 mensualidades</li>
+                  <li>Compatible con el trabajo</li>
+                  <li>Pago único (no pensión mensual)</li>
+                </ul>
+                <p class="ejemplo"><strong>Ejemplo:</strong> Pérdida de 3 dedos en trabajador manual.</p>
+              </div>
+            </div>
+
+            <div class="grado-ip-card">
+              <div class="grado-ip-header total">
+                <h3>Incapacidad Permanente Total</h3>
+                <div class="pension-amount">55% Base Reguladora</div>
+              </div>
+              <div class="grado-ip-content">
+                <p class="definition">
+                  Inhabilita al trabajador para la realización de todas o de las fundamentales
+                  tareas de su profesión habitual, pudiendo dedicarse a otra distinta.
+                </p>
+                <ul class="caracteristicas">
+                  <li>No puedes realizar tu trabajo habitual</li>
+                  <li>Puedes trabajar en otra profesión</li>
+                  <li>Pensión del 55% (60% si >55 años sin trabajo)</li>
+                  <li>Pensión mensual vitalicia</li>
+                </ul>
+                <p class="ejemplo"><strong>Ejemplo:</strong> Albañil con hernia discal grave, puede trabajar de administrativo.</p>
+              </div>
+            </div>
+
+            <div class="grado-ip-card">
+              <div class="grado-ip-header absoluta">
+                <h3>Incapacidad Permanente Absoluta</h3>
+                <div class="pension-amount">100% Base Reguladora</div>
+              </div>
+              <div class="grado-ip-content">
+                <p class="definition">
+                  Inhabilita por completo al trabajador para toda profesión u oficio, impidiendo
+                  cualquier tipo de actividad laboral.
+                </p>
+                <ul class="caracteristicas">
+                  <li>No puedes realizar ningún trabajo</li>
+                  <li>Pensión del 100% base reguladora</li>
+                  <li>Vitalicia e incompatible con trabajar</li>
+                  <li>Posibles actividades marginales permitidas</li>
+                </ul>
+                <p class="ejemplo"><strong>Ejemplo:</strong> Esquizofrenia grave, cardiopatía severa, ceguera total.</p>
+              </div>
+            </div>
+
+            <div class="grado-ip-card">
+              <div class="grado-ip-header gran-invalidez">
+                <h3>Gran Invalidez</h3>
+                <div class="pension-amount">100% + 45% Complemento</div>
+              </div>
+              <div class="grado-ip-content">
+                <p class="definition">
+                  Además de la incapacidad absoluta, el trabajador necesita la asistencia de otra
+                  persona para realizar los actos más esenciales de la vida (comer, vestirse, desplazarse).
+                </p>
+                <ul class="caracteristicas">
+                  <li>Requieres ayuda de tercera persona</li>
+                  <li>Pensión del 100% + complemento 45%</li>
+                  <li>Total: 145% base reguladora mínimo</li>
+                  <li>Máxima prestación posible</li>
+                </ul>
+                <p class="ejemplo"><strong>Ejemplo:</strong> Tetraplejia, Alzheimer avanzado, ceguera + sordera.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Cómo Te Ayudamos con la Incapacidad</h2>
+
+          <div class="proceso-ayuda">
+            <div class="paso-ayuda">
+              <div class="paso-icon">📋</div>
+              <h3>Análisis de Viabilidad</h3>
+              <p>
+                Estudiamos tu caso médico y laboral para determinar qué grado de incapacidad
+                puedes conseguir. Análisis gratuito y sin compromiso.
+              </p>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="paso-icon">⚕️</div>
+              <h3>Informe Pericial Médico</h3>
+              <p>
+                Elaboramos un informe pericial completo que fundamenta las limitaciones que
+                te impiden trabajar, según criterios médico-legales del INSS.
+              </p>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="paso-icon">📄</div>
+              <h3>Documentación Completa</h3>
+              <p>
+                Te indicamos qué informes médicos necesitas, qué pruebas solicitar y cómo
+                completar tu expediente para maximizar probabilidades de éxito.
+              </p>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="paso-icon">⚖️</div>
+              <h3>Apoyo en Recursos</h3>
+              <p>
+                Si tu solicitud es denegada, nuestro informe es fundamental para la reclamación
+                previa y para el proceso judicial si fuera necesario.
+              </p>
+            </div>
+          </div>
+
+          <h2>Diferencias: Incapacidad vs Discapacidad</h2>
+
+          <div class="tabla-comparativa">
+            <table>
+              <thead>
+                <tr>
+                  <th>Aspecto</th>
+                  <th>Incapacidad Permanente</th>
+                  <th>Certificado Discapacidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Qué valora</strong></td>
+                  <td>Capacidad para trabajar</td>
+                  <td>Limitaciones en vida diaria</td>
+                </tr>
+                <tr>
+                  <td><strong>Quién gestiona</strong></td>
+                  <td>INSS / Mutua laboral</td>
+                  <td>Servicios Sociales CCAA</td>
+                </tr>
+                <tr>
+                  <td><strong>Prestación</strong></td>
+                  <td>Pensión mensual</td>
+                  <td>Beneficios y ayudas</td>
+                </tr>
+                <tr>
+                  <td><strong>Compatible con trabajo</strong></td>
+                  <td>Depende del grado</td>
+                  <td>Sí, siempre</td>
+                </tr>
+                <tr>
+                  <td><strong>Requisitos</strong></td>
+                  <td>Cotización (salvo no contributiva)</td>
+                  <td>Ninguno específico</td>
+                </tr>
+                <tr>
+                  <td><strong>Son compatibles</strong></td>
+                  <td colspan="2" class="compatible">SÍ - Puedes tener ambas simultáneamente</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Patologías que Generan Incapacidad</h2>
+
+          <p>Las enfermedades y condiciones médicas más habituales que pueden dar lugar a incapacidad permanente:</p>
+
+          <div class="patologias-ip">
+            <div class="patologia-ip">
+              <h3>🧠 Salud Mental</h3>
+              <ul>
+                <li>Depresión mayor recurrente</li>
+                <li>Trastorno bipolar</li>
+                <li>Esquizofrenia</li>
+                <li>Trastorno de ansiedad generalizada grave</li>
+                <li>TOC incapacitante</li>
+                <li>Trastorno de personalidad grave</li>
+              </ul>
+            </div>
+
+            <div class="patologia-ip">
+              <h3>🦴 Sistema Musculoesquelético</h3>
+              <ul>
+                <li>Hernias discales con radiculopatía</li>
+                <li>Espondilolistesis severa</li>
+                <li>Artrosis avanzada</li>
+                <li>Artritis reumatoide</li>
+                <li>Fibromialgia invalidante</li>
+                <li>Síndrome del túnel carpiano bilateral</li>
+              </ul>
+            </div>
+
+            <div class="patologia-ip">
+              <h3>❤️ Sistema Cardiovascular</h3>
+              <ul>
+                <li>Cardiopatía isquémica</li>
+                <li>Insuficiencia cardíaca</li>
+                <li>Valvulopatías graves</li>
+                <li>Arritmias no controladas</li>
+                <li>Hipertensión arterial severa</li>
+              </ul>
+            </div>
+
+            <div class="patologia-ip">
+              <h3>🫁 Sistema Respiratorio</h3>
+              <ul>
+                <li>EPOC grave</li>
+                <li>Asma crónica severa</li>
+                <li>Fibrosis pulmonar</li>
+                <li>Apnea del sueño severa</li>
+                <li>Insuficiencia respiratoria</li>
+              </ul>
+            </div>
+
+            <div class="patologia-ip">
+              <h3>🧬 Enfermedades Neurológicas</h3>
+              <ul>
+                <li>Esclerosis múltiple</li>
+                <li>Parkinson</li>
+                <li>Epilepsia no controlada</li>
+                <li>ELA</li>
+                <li>Neuropatías periféricas</li>
+                <li>Secuelas de ictus</li>
+              </ul>
+            </div>
+
+            <div class="patologia-ip">
+              <h3>🔬 Otras Patologías</h3>
+              <ul>
+                <li>Cáncer y secuelas tratamiento</li>
+                <li>Diabetes con complicaciones</li>
+                <li>Insuficiencia renal crónica</li>
+                <li>Hepatopatías graves</li>
+                <li>Enfermedades autoinmunes</li>
+                <li>Dolor crónico intratable</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Proceso de Solicitud</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h3>Solicitud Inicial</h3>
+                <p>Presentación en INSS o Mutua. Necesitas informes médicos actualizados que acrediten tus limitaciones.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h3>Evaluación ICAMS/EVI</h3>
+                <p>Citación para evaluación médica (2-4 meses). El tribunal médico valora tus limitaciones funcionales.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h3>Resolución</h3>
+                <p>Plazo máximo 135 días. Puede ser: concesión del grado, denegación o propuesta de otro grado.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-content">
+                <h3>Recurso (si es negativa)</h3>
+                <p>30 días para reclamación previa. Si se desestima, puedes acudir a vía judicial en 30 días más.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Necesitas Incapacidad?</h3>
+            <p>Analiza tu caso gratis y sin compromiso. Te orientamos sobre tus posibilidades.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="info-card requisitos-card">
+            <h3>Requisitos Generales</h3>
+            <ul>
+              <li><strong>Edad:</strong> Menor de 65 años</li>
+              <li><strong>Estar afiliado</strong> a la Seguridad Social</li>
+              <li><strong>Dado de alta médica</strong> (con limitaciones)</li>
+              <li><strong>Cotización:</strong> Varía según edad y tipo</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Cotización Necesaria</h3>
+            <p><strong>Enfermedad común:</strong></p>
+            <ul class="cotizacion-list">
+              <li>15 años cotizados (general)</li>
+              <li>3 años en últimos 10 años</li>
+            </ul>
+            <p><strong>Accidente o enfermedad profesional:</strong></p>
+            <ul class="cotizacion-list">
+              <li>No se exige cotización previa</li>
+            </ul>
+          </div>
+
+          <div class="info-card cuantias-card">
+            <h3>Cuantías Orientativas</h3>
+            <p class="cuantia-item">
+              <strong>Total (55%):</strong><br>
+              Base 2.000€ → 1.100€/mes
+            </p>
+            <p class="cuantia-item">
+              <strong>Absoluta (100%):</strong><br>
+              Base 2.000€ → 2.000€/mes
+            </p>
+            <p class="cuantia-item">
+              <strong>Gran Invalidez:</strong><br>
+              Base 2.000€ → 2.900€/mes
+            </p>
+            <p class="note-small">*Importes orientativos. Dependen de tu base reguladora.</p>
+          </div>
+
+          <div class="info-card destacado-card">
+            <h3>💡 Importante</h3>
+            <p>
+              Un informe pericial bien fundamentado puede marcar la diferencia entre conseguir
+              o no la incapacidad, especialmente en enfermedades mentales y dolor crónico.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Incapacidad</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Crees que Tienes Derecho a Incapacidad Permanente?</h2>
+      <p>Evaluamos tu caso y te orientamos sobre tus posibilidades reales</p>
+      <a href="/contacto" class="cta-button-large">Solicitar Análisis Gratuito</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-6);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Grados IP */
+  .grados-ip {
+    margin: var(--space-8) 0;
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .grado-ip-card {
+    background: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .grado-ip-header {
+    padding: var(--space-6);
+    color: var(--white);
+  }
+
+  .grado-ip-header h3 {
+    margin: 0 0 var(--space-2) 0;
+    font-size: var(--text-xl);
+    color: var(--white);
+  }
+
+  .pension-amount {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    opacity: 0.95;
+  }
+
+  .parcial { background: linear-gradient(135deg, #64748B, #475569); }
+  .total { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .absoluta { background: linear-gradient(135deg, #059669, #047857); }
+  .gran-invalidez { background: linear-gradient(135deg, #DC2626, #B91C1C); }
+
+  .grado-ip-content {
+    padding: var(--space-6);
+  }
+
+  .definition {
+    font-style: italic;
+    color: var(--medium-gray);
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    background: var(--light-gray);
+    border-radius: var(--radius-md);
+  }
+
+  .caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+  }
+
+  .caracteristicas li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-7);
+    position: relative;
+    color: var(--dark-gray);
+  }
+
+  .caracteristicas li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+  }
+
+  .ejemplo {
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    background: var(--light-blue);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+  }
+
+  /* Proceso Ayuda */
+  .proceso-ayuda {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .proceso-ayuda {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .paso-ayuda {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .paso-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .paso-ayuda h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .paso-ayuda p {
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Tabla Comparativa */
+  .tabla-comparativa {
+    margin: var(--space-8) 0;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  thead {
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+
+  th, td {
+    padding: var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--border-gray);
+  }
+
+  th {
+    font-weight: var(--font-semibold);
+  }
+
+  tbody tr:hover {
+    background: var(--light-gray);
+  }
+
+  .compatible {
+    text-align: center;
+    font-weight: var(--font-bold);
+    color: var(--primary-green);
+  }
+
+  /* Patologías IP */
+  .patologias-ip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .patologias-ip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .patologias-ip {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .patologia-ip {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .patologia-ip h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .patologia-ip ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .patologia-ip li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    position: relative;
+    color: var(--dark-gray);
+    font-size: var(--text-sm);
+  }
+
+  .patologia-ip li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+  }
+
+  /* Timeline */
+  .timeline {
+    margin: var(--space-8) 0;
+    position: relative;
+    padding-left: var(--space-12);
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-blue);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: var(--space-8);
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -38px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: var(--text-xl);
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow-md);
+  }
+
+  .timeline-content {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .timeline-content h3 {
+    color: var(--primary-blue);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .timeline-content p {
+    margin: 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--dark-gray);
+  }
+
+  .cotizacion-list li {
+    padding-left: var(--space-6);
+    position: relative;
+  }
+
+  .cotizacion-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+  }
+
+  .cuantia-item {
+    background: var(--light-gray);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+  }
+
+  .note-small {
+    font-size: var(--text-xs);
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-top: var(--space-2);
+  }
+
+  .destacado-card {
+    background: var(--light-blue);
+    border: 2px solid var(--primary-blue);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

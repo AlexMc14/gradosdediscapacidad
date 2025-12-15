@@ -1,0 +1,56 @@
+[
+  {
+    "id": "peritaje-medico",
+    "titulo": "Peritaje Médico",
+    "slug": "peritaje-medico",
+    "descripcion": "Informes periciales médicos especializados para la valoración del grado de discapacidad con rigor profesional.",
+    "descripcionCorta": "Informes periciales médicos profesionales",
+    "icono": "medical-report",
+    "url": "/servicios/peritaje-medico"
+  },
+  {
+    "id": "valoracion-discapacidad",
+    "titulo": "Valoración de Discapacidad",
+    "slug": "valoracion-discapacidad",
+    "descripcion": "Valoración completa y asesoramiento para la solicitud del certificado de discapacidad oficial.",
+    "descripcionCorta": "Valoración y asesoramiento integral",
+    "icono": "assessment",
+    "url": "/servicios/valoracion-discapacidad"
+  },
+  {
+    "id": "incapacidad-laboral",
+    "titulo": "Incapacidad Laboral",
+    "slug": "incapacidad-laboral",
+    "descripcion": "Peritaje especializado para reconocimiento de incapacidad permanente total, absoluta o gran invalidez.",
+    "descripcionCorta": "Peritaje para incapacidad permanente",
+    "icono": "disability",
+    "url": "/servicios/incapacidad-laboral"
+  },
+  {
+    "id": "revision-grado",
+    "titulo": "Revisión de Grado",
+    "slug": "revision-grado",
+    "descripcion": "Solicitud de revisión del porcentaje de discapacidad cuando la situación médica ha empeorado.",
+    "descripcionCorta": "Revisión y aumento de porcentaje",
+    "icono": "review",
+    "url": "/servicios/revision-grado"
+  },
+  {
+    "id": "recursos-reclamaciones",
+    "titulo": "Recursos y Reclamaciones",
+    "slug": "recursos-reclamaciones",
+    "descripcion": "Asistencia profesional para recursos de reposición o alzada ante resoluciones desfavorables.",
+    "descripcionCorta": "Recursos ante denegaciones",
+    "icono": "appeal",
+    "url": "/servicios/recursos-reclamaciones"
+  },
+  {
+    "id": "informes-periciales",
+    "titulo": "Informes Periciales",
+    "slug": "informes-periciales",
+    "descripcion": "Elaboración de informes médicos periciales detallados para procesos judiciales o administrativos.",
+    "descripcionCorta": "Informes para procesos legales",
+    "icono": "document",
+    "url": "/servicios/informes-periciales"
+  }
+]

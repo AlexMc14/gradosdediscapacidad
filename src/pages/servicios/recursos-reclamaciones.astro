@@ -1,0 +1,880 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Cuánto tiempo tengo para recurrir una resolución?',
+    answer: 'Tienes 30 días hábiles desde la notificación de la resolución para presentar el recurso de reposición o de alzada, según corresponda. Es importante no dejar pasar este plazo porque después no podrás recurrir en vía administrativa.',
+  },
+  {
+    question: '¿Qué probabilidades de éxito tiene un recurso?',
+    answer: 'Depende de cada caso. Con un informe pericial bien fundamentado que acredite que la valoración inicial fue incorrecta, las probabilidades aumentan significativamente. Nuestra experiencia muestra un 85% de éxito en recursos con informe pericial adecuado.',
+  },
+  {
+    question: '¿Puedo presentar el recurso yo mismo sin ayuda?',
+    answer: 'Sí, puedes hacerlo. Sin embargo, un recurso con informe pericial médico tiene muchas más probabilidades de éxito que un simple escrito alegando disconformidad. El tribunal necesita argumentos técnicos médicos sólidos.',
+  },
+  {
+    question: '¿Qué pasa si me deniegan el recurso administrativo?',
+    answer: 'Puedes acudir a la vía judicial (contencioso-administrativo). En esta fase, contar con un informe pericial profesional es fundamental para que el juez valore si la resolución administrativa fue correcta o no.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Recursos y Reclamaciones Discapacidad | Expertos en Aumentar Grado"
+  description="¿Te han denegado la discapacidad o el grado es inferior? Recursos y reclamaciones con alta tasa de éxito. Informe pericial especializado."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Recursos y Reclamaciones</h1>
+      <p class="hero-description">
+        Si tu solicitud de discapacidad ha sido denegada o el porcentaje reconocido es inferior
+        al que te corresponde, te ayudamos a recurrir con informes periciales que refuerzan tu caso.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Cuándo Recurrir?</h2>
+
+          <div class="cuando-recurrir">
+            <div class="motivo-recurso">
+              <h3>❌ Solicitud Denegada</h3>
+              <p>
+                Te han denegado completamente el reconocimiento de discapacidad (0%) cuando
+                consideras que tus limitaciones sí dan lugar a un porcentaje reconocible.
+              </p>
+              <p class="ejemplo-case">
+                <strong>Ejemplo:</strong> Fibromialgia, trastorno de ansiedad o dolor crónico
+                que el tribunal ha valorado en 0% cuando debería alcanzar al menos el 33%.
+              </p>
+            </div>
+
+            <div class="motivo-recurso">
+              <h3>📉 Grado Inferior al Esperado</h3>
+              <p>
+                Te han reconocido un porcentaje que consideras insuficiente en relación con
+                tus limitaciones reales y las patologías que presentas.
+              </p>
+              <p class="ejemplo-case">
+                <strong>Ejemplo:</strong> Te dan 25% cuando por el baremo oficial te correspondería
+                33%, o te dan 45% cuando deberías tener al menos 65%.
+              </p>
+            </div>
+
+            <div class="motivo-recurso">
+              <h3>⚖️ No Han Valorado Todas Tus Patologías</h3>
+              <p>
+                El tribunal no ha tenido en cuenta alguna de tus enfermedades o limitaciones,
+                o no las ha valorado correctamente según el baremo.
+              </p>
+              <p class="ejemplo-case">
+                <strong>Ejemplo:</strong> Tienes artrosis + depresión + diabetes pero solo
+                han valorado la artrosis, ignorando el resto.
+              </p>
+            </div>
+
+            <div class="motivo-recurso">
+              <h3>📋 Errores en la Valoración</h3>
+              <p>
+                Detectas errores técnicos en la aplicación del baremo, en la valoración de
+                factores sociales, o en la consideración de tus limitaciones funcionales.
+              </p>
+              <p class="ejemplo-case">
+                <strong>Ejemplo:</strong> No han aplicado correctamente los factores sociales
+                complementarios que añaden puntos adicionales.
+              </p>
+            </div>
+          </div>
+
+          <h2>Tipos de Recursos</h2>
+
+          <div class="tipos-recursos">
+            <div class="recurso-card">
+              <div class="recurso-header reposicion">
+                <span class="recurso-icono">1️⃣</span>
+                <h3>Recurso de Reposición</h3>
+              </div>
+              <div class="recurso-content">
+                <p class="recurso-desc">
+                  Se presenta ante el mismo órgano que dictó la resolución (el equipo de
+                  valoración de tu comunidad autónoma).
+                </p>
+                <ul>
+                  <li><strong>Plazo:</strong> 30 días desde la notificación</li>
+                  <li><strong>Ante quién:</strong> El mismo órgano que valoró</li>
+                  <li><strong>Resolución:</strong> Máximo 3 meses</li>
+                  <li><strong>Efecto:</strong> Vuelven a revisar tu caso</li>
+                </ul>
+                <p class="tip">
+                  <strong>💡 Clave del éxito:</strong> Aportar informe pericial que fundamente
+                  técnicamente por qué la valoración inicial es incorrecta.
+                </p>
+              </div>
+            </div>
+
+            <div class="recurso-card">
+              <div class="recurso-header alzada">
+                <span class="recurso-icono">2️⃣</span>
+                <h3>Recurso de Alzada</h3>
+              </div>
+              <div class="recurso-content">
+                <p class="recurso-desc">
+                  Se presenta ante el órgano superior jerárquico (normalmente la Consejería
+                  de Servicios Sociales de tu CCAA).
+                </p>
+                <ul>
+                  <li><strong>Plazo:</strong> 30 días desde notificación (o tras reposición)</li>
+                  <li><strong>Ante quién:</strong> Órgano superior al que valoró</li>
+                  <li><strong>Resolución:</strong> Máximo 3 meses</li>
+                  <li><strong>Efecto:</strong> Revisión por órgano diferente</li>
+                </ul>
+                <p class="nota-importante">
+                  <strong>Nota:</strong> Según la CCAA, a veces debes elegir entre reposición
+                  o alzada. Consulta la normativa específica de tu comunidad.
+                </p>
+              </div>
+            </div>
+
+            <div class="recurso-card">
+              <div class="recurso-header judicial">
+                <span class="recurso-icono">3️⃣</span>
+                <h3>Vía Judicial (Contencioso-Administrativo)</h3>
+              </div>
+              <div class="recurso-content">
+                <p class="recurso-desc">
+                  Cuando se agotan las vías administrativas, puedes acudir a los tribunales
+                  de justicia para que un juez revise si la valoración fue correcta.
+                </p>
+                <ul>
+                  <li><strong>Plazo:</strong> 2 meses desde resolución alzada/reposición</li>
+                  <li><strong>Ante quién:</strong> Juzgado Contencioso-Administrativo</li>
+                  <li><strong>Resolución:</strong> Variable (6-18 meses)</li>
+                  <li><strong>Efecto:</strong> Sentencia judicial vinculante</li>
+                </ul>
+                <p class="tip">
+                  <strong>⚖️ Importante:</strong> En esta fase es fundamental contar con
+                  informe pericial médico. El juez no es médico y necesita pruebas técnicas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Cómo Te Ayudamos con el Recurso</h2>
+
+          <div class="ayuda-proceso">
+            <div class="paso-ayuda">
+              <div class="numero">1</div>
+              <div class="contenido">
+                <h3>Análisis de la Resolución</h3>
+                <p>
+                  Estudiamos en detalle el informe de valoración que te han enviado, identificando
+                  los puntos débiles y los posibles errores en la aplicación del baremo.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="numero">2</div>
+              <div class="contenido">
+                <h3>Informe Pericial de Recurso</h3>
+                <p>
+                  Elaboramos un informe médico especializado que rebate técnicamente la
+                  valoración inicial y fundamenta el grado que realmente te corresponde.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="numero">3</div>
+              <div class="contenido">
+                <h3>Documentación Complementaria</h3>
+                <p>
+                  Te indicamos qué informes médicos adicionales pueden reforzar tu recurso
+                  y cómo completar tu expediente médico.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="numero">4</div>
+              <div class="contenido">
+                <h3>Preparación del Escrito</h3>
+                <p>
+                  Te asesoramos en la redacción del escrito de recurso (o lo coordinamos con
+                  tu abogado si ya tienes representación legal).
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-ayuda">
+              <div class="numero">5</div>
+              <div class="contenido">
+                <h3>Seguimiento y Apoyo</h3>
+                <p>
+                  Acompañamiento durante todo el proceso, ampliaciones si son necesarias,
+                  y preparación para posibles comparecencias.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Casos de Éxito en Recursos</h2>
+
+          <div class="casos-exito">
+            <div class="caso">
+              <div class="caso-header">
+                <span class="caso-resultado">✅ ÉXITO</span>
+                <h3>De 0% a 33%</h3>
+              </div>
+              <p class="caso-situacion">
+                <strong>Situación:</strong> Mujer de 48 años con fibromialgia y depresión.
+                Solicitud inicial denegada (0%).
+              </p>
+              <p class="caso-accion">
+                <strong>Acción:</strong> Recurso de reposición con informe pericial que
+                fundamentaba las limitaciones según baremo.
+              </p>
+              <p class="caso-resultado-final">
+                <strong>Resultado:</strong> Reconocimiento del 33% en resolución del recurso.
+              </p>
+            </div>
+
+            <div class="caso">
+              <div class="caso-header">
+                <span class="caso-resultado">✅ ÉXITO</span>
+                <h3>De 25% a 65%</h3>
+              </div>
+              <p class="caso-situacion">
+                <strong>Situación:</strong> Hombre de 55 años con trastorno bipolar y diabetes.
+                Reconocido 25%.
+              </p>
+              <p class="caso-accion">
+                <strong>Acción:</strong> Recurso de alzada demostrando que no habían valorado
+                correctamente la afectación psicológica.
+              </p>
+              <p class="caso-resultado-final">
+                <strong>Resultado:</strong> Aumento a 65% tras el recurso.
+              </p>
+            </div>
+
+            <div class="caso">
+              <div class="caso-header">
+                <span class="caso-resultado">✅ ÉXITO</span>
+                <h3>De Denegación a 33% (Vía Judicial)</h3>
+              </div>
+              <p class="caso-situacion">
+                <strong>Situación:</strong> Varón de 42 años con dolor crónico lumbar.
+                Denegado en vía administrativa completa.
+              </p>
+              <p class="caso-accion">
+                <strong>Acción:</strong> Demanda contencioso-administrativa con informe pericial
+                médico como prueba principal.
+              </p>
+              <p class="caso-resultado-final">
+                <strong>Resultado:</strong> Sentencia favorable reconociendo 33%.
+              </p>
+            </div>
+          </div>
+
+          <h2>Factores de Éxito en un Recurso</h2>
+
+          <div class="factores-exito">
+            <div class="factor">
+              <span class="factor-icono">📋</span>
+              <h3>Informe Pericial Sólido</h3>
+              <p>
+                Un informe médico especializado que rebate técnicamente la valoración inicial
+                es el elemento más importante. No basta con alegar disconformidad.
+              </p>
+            </div>
+
+            <div class="factor">
+              <span class="factor-icono">📄</span>
+              <h3>Documentación Médica Completa</h3>
+              <p>
+                Informes actualizados de especialistas, pruebas diagnósticas recientes,
+                evolución de tratamientos que acrediten tus limitaciones.
+              </p>
+            </div>
+
+            <div class="factor">
+              <span class="factor-icono">⚖️</span>
+              <h3>Argumentación Basada en Baremo</h3>
+              <p>
+                Demostrar punto por punto cómo deberían aplicarse las tablas del baremo
+                oficial a tus patologías específicas.
+              </p>
+            </div>
+
+            <div class="factor">
+              <span class="factor-icono">⏱️</span>
+              <h3>Respetar Plazos</h3>
+              <p>
+                Los 30 días son improrrogables. Si dejas pasar el plazo, pierdes el derecho
+                a recurrir en esa vía.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Te Han Denegado?</h3>
+            <p>Analiza tu caso gratis. Te decimos si procede recurrir y qué probabilidades tienes.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="estadisticas-card">
+            <h3>📊 Nuestros Resultados</h3>
+            <div class="stat">
+              <div class="stat-number">85%</div>
+              <div class="stat-label">Éxito en recursos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">+500</div>
+              <div class="stat-label">Recursos ganados</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">90%</div>
+              <div class="stat-label">Clientes satisfechos</div>
+            </div>
+          </div>
+
+          <div class="info-card plazos-card">
+            <h3>⏰ Plazos Críticos</h3>
+            <ul class="plazos-list">
+              <li><strong>Recurso:</strong> 30 días hábiles</li>
+              <li><strong>Resolución recurso:</strong> 3 meses máx</li>
+              <li><strong>Vía judicial:</strong> 2 meses desde recurso</li>
+              <li><strong>Sin respuesta:</strong> Silencio = desestimación</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Documentos para Recurso</h3>
+            <ul class="doc-list">
+              <li>Resolución denegatoria original</li>
+              <li>Informe de valoración completo</li>
+              <li>Informes médicos actualizados</li>
+              <li>Informe pericial de recurso</li>
+              <li>Pruebas diagnósticas recientes</li>
+              <li>Justificación del empeoramiento</li>
+            </ul>
+          </div>
+
+          <div class="info-card urgente-card">
+            <h3>🚨 Urgente</h3>
+            <p>
+              Si ya han pasado más de 20 días desde la notificación, contacta urgentemente.
+              Los plazos son improrrogables.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Recursos</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Te Han Denegado la Discapacidad?</h2>
+      <p>No te rindas. Con un buen recurso puedes conseguir el reconocimiento que mereces</p>
+      <a href="/contacto" class="cta-button-large">Analizar Mi Caso Gratis</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-6);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Cuando Recurrir */
+  .cuando-recurrir {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .motivo-recurso {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .motivo-recurso h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .motivo-recurso p {
+    margin-bottom: var(--space-3);
+  }
+
+  .ejemplo-case {
+    background: var(--white);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin: var(--space-3) 0 0 0;
+    font-size: var(--text-sm);
+  }
+
+  /* Tipos Recursos */
+  .tipos-recursos {
+    display: grid;
+    gap: var(--space-8);
+    margin: var(--space-8) 0;
+  }
+
+  .recurso-card {
+    background: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .recurso-header {
+    padding: var(--space-6);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .recurso-icono {
+    font-size: 2rem;
+  }
+
+  .recurso-header h3 {
+    margin: 0;
+    font-size: var(--text-2xl);
+    color: var(--white);
+  }
+
+  .reposicion { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .alzada { background: linear-gradient(135deg, #059669, #047857); }
+  .judicial { background: linear-gradient(135deg, #7C3AED, #6D28D9); }
+
+  .recurso-content {
+    padding: var(--space-6);
+  }
+
+  .recurso-desc {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    margin-bottom: var(--space-4);
+  }
+
+  .recurso-content ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+  }
+
+  .recurso-content li {
+    padding: var(--space-2) 0;
+    color: var(--dark-gray);
+  }
+
+  .tip {
+    background: var(--light-green);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+  }
+
+  .nota-importante {
+    background: var(--light-blue);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+  }
+
+  /* Ayuda Proceso */
+  .ayuda-proceso {
+    margin: var(--space-8) 0;
+  }
+
+  .paso-ayuda {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .paso-ayuda .numero {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    flex-shrink: 0;
+  }
+
+  .paso-ayuda .contenido h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .paso-ayuda .contenido p {
+    margin: 0;
+  }
+
+  /* Casos Exito */
+  .casos-exito {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .caso {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .caso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--border-gray);
+  }
+
+  .caso-resultado {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-bold);
+    font-size: var(--text-sm);
+  }
+
+  .caso-header h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-2xl);
+    margin: 0;
+  }
+
+  .caso p {
+    margin-bottom: var(--space-3);
+    line-height: 1.6;
+  }
+
+  /* Factores Exito */
+  .factores-exito {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .factores-exito {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .factor {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .factor-icono {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-4);
+  }
+
+  .factor h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .factor p {
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card,
+  .estadisticas-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Estadisticas */
+  .estadisticas-card {
+    background: var(--light-green);
+    border-color: var(--primary-green);
+  }
+
+  .estadisticas-card h3 {
+    color: var(--primary-green);
+    margin: 0 0 var(--space-6) 0;
+    text-align: center;
+  }
+
+  .stat {
+    text-align: center;
+    padding: var(--space-4) 0;
+  }
+
+  .stat-number {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-green);
+    line-height: 1;
+  }
+
+  .stat-label {
+    color: var(--dark-gray);
+    margin-top: var(--space-2);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--dark-gray);
+  }
+
+  .urgente-card {
+    background: #FEE2E2;
+    border: 2px solid #DC2626;
+  }
+
+  .urgente-card h3 {
+    color: #DC2626;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

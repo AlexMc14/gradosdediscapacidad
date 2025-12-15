@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "pregunta": "¿Qué es el grado de discapacidad?",
+    "respuesta": "El grado de discapacidad es un porcentaje que refleja las limitaciones funcionales de una persona. Se establece mediante un baremo oficial y puede ir desde el 0% hasta el 100%. A partir del 33% se accede a beneficios y ayudas específicas."
+  },
+  {
+    "id": 2,
+    "pregunta": "¿Cuánto tiempo tarda el proceso de valoración?",
+    "respuesta": "El plazo legal es de 6 meses desde la presentación de la solicitud. Sin embargo, en la práctica suele tardar entre 3 y 9 meses dependiendo de la comunidad autónoma y la carga de trabajo del tribunal médico."
+  },
+  {
+    "id": 3,
+    "pregunta": "¿Qué beneficios tiene el 33% de discapacidad?",
+    "respuesta": "Con el 33% se accede a deducciones fiscales, tarjeta de aparcamiento, reserva de plazas en empleo público, ayudas para rehabilitación de vivienda, descuentos en transporte y protección contra despido improcedente, entre otros."
+  },
+  {
+    "id": 4,
+    "pregunta": "¿Puedo trabajar con un grado de discapacidad reconocido?",
+    "respuesta": "Sí, el reconocimiento de discapacidad es compatible con el trabajo. De hecho, existen cuotas de empleo reservadas para personas con discapacidad igual o superior al 33% tanto en el sector público como en empresas de más de 50 trabajadores."
+  },
+  {
+    "id": 5,
+    "pregunta": "¿Qué documentación necesito para solicitar la valoración?",
+    "respuesta": "Necesitas DNI, solicitud oficial cumplimentada, informes médicos actualizados que acrediten tu enfermedad o lesión, y cualquier prueba diagnóstica relevante (analíticas, radiografías, resonancias, etc.)."
+  },
+  {
+    "id": 6,
+    "pregunta": "¿Puedo solicitar una revisión del grado?",
+    "respuesta": "Sí, si tu situación médica ha empeorado puedes solicitar una revisión por agravamiento. También existe la revisión por mejoría cuando el tribunal lo considera oportuno. En ambos casos se realiza una nueva valoración."
+  },
+  {
+    "id": 7,
+    "pregunta": "¿Qué hago si me deniegan la discapacidad?",
+    "respuesta": "Puedes interponer un recurso de reposición ante el mismo órgano en el plazo de 1 mes. Si es desestimado, cabe recurso de alzada y posteriormente recurso contencioso-administrativo. Un informe pericial médico puede ser determinante en estos recursos."
+  },
+  {
+    "id": 8,
+    "pregunta": "¿Cuál es la diferencia entre discapacidad e incapacidad permanente?",
+    "respuesta": "La discapacidad mide limitaciones funcionales para las actividades de la vida diaria, mientras que la incapacidad permanente evalúa la capacidad para trabajar. Son procesos diferentes, con distintos organismos valoradores y beneficios, aunque pueden coexistir."
+  },
+  {
+    "id": 9,
+    "pregunta": "¿Qué enfermedades dan derecho al 33% de discapacidad?",
+    "respuesta": "Enfermedades como fibromialgia, artritis reumatoide, lupus, esclerosis múltiple, trastornos mentales graves, diabetes con complicaciones, enfermedad pulmonar crónica (EPOC), entre otras, pueden dar derecho al 33% o más, dependiendo del grado de afectación."
+  },
+  {
+    "id": 10,
+    "pregunta": "¿En qué consiste el peritaje médico?",
+    "respuesta": "El peritaje médico es un informe elaborado por un profesional médico independiente que evalúa objetivamente el estado de salud, las limitaciones funcionales y el grado de afectación de la persona. Sirve como prueba documental en procesos de valoración o recursos."
+  }
+]

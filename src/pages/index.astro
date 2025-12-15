@@ -1,0 +1,544 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import Button from '@components/ui/Button.astro';
+import serviciosData from '@data/servicios.json';
+import testimoniosData from '@data/testimonios.json';
+import faqData from '@data/faq.json';
+import { getCollection } from 'astro:content';
+
+// Obtener posts destacados del blog
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const featuredPosts = allPosts
+  .filter(post => post.data.featured)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<PageLayout
+  title="Peritaje Médico y Valoración de Discapacidad"
+  description="Expertos en peritaje médico para valoración de grados de discapacidad en España. Recursos, revisiones e informes periciales. Solicita presupuesto gratuito."
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Peritaje Médico Especializado en Grados de Discapacidad</h1>
+          <p class="hero-description">
+            Te ayudamos a conseguir el reconocimiento oficial del grado de discapacidad que mereces.
+            Más de 10 años de experiencia y +500 clientes satisfechos en toda España.
+          </p>
+          <div class="hero-features">
+            <div class="feature-item">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Consulta gratuita</span>
+            </div>
+            <div class="feature-item">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% confidencial</span>
+            </div>
+            <div class="feature-item">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Atención personalizada</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <Button href="/contacto" variant="primary" size="lg">
+              Solicitar Presupuesto Gratuito
+            </Button>
+            <Button href="/servicios" variant="outline" size="lg">
+              Ver Servicios
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section class="services bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros Servicios</h2>
+        <p>Asesoramiento profesional en todas las fases del proceso</p>
+      </div>
+      <div class="services-grid">
+        {serviciosData.map((servicio) => (
+          <div class="service-card">
+            <h3>{servicio.titulo}</h3>
+            <p>{servicio.descripcion}</p>
+            <a href={servicio.url} class="service-link">
+              Más información →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso Section -->
+  <section class="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cómo Trabajamos</h2>
+        <p>Un proceso sencillo y transparente</p>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Consulta Inicial</h3>
+          <p>Analizamos tu caso de forma gratuita y te asesoramos sobre la viabilidad.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Revisión Médica</h3>
+          <p>Estudiamos toda tu documentación médica y solicitamos informes adicionales si es necesario.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Informe Pericial</h3>
+          <p>Elaboramos un informe médico pericial completo y fundamentado.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Seguimiento</h3>
+          <p>Te acompañamos durante todo el proceso hasta conseguir tu objetivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section class="testimonials bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Opiniones de Nuestros Clientes</h2>
+        <p>Casos de éxito reales</p>
+      </div>
+      <div class="testimonials-grid">
+        {testimoniosData.slice(0, 3).map((testimonio) => (
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              {'★'.repeat(testimonio.rating)}
+            </div>
+            <p class="testimonial-text">"{testimonio.texto}"</p>
+            <div class="testimonial-author">
+              <strong>{testimonio.nombre}</strong>
+              <span>{testimonio.ubicacion}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Resolvemos tus dudas más comunes</p>
+      </div>
+      <div class="faq-list">
+        {faqData.slice(0, 6).map((item) => (
+          <details class="faq-item">
+            <summary class="faq-question">{item.pregunta}</summary>
+            <p class="faq-answer">{item.respuesta}</p>
+          </details>
+        ))}
+      </div>
+      <div class="faq-cta">
+        <p>¿Tienes más preguntas?</p>
+        <Button href="/contacto" variant="primary">
+          Contacta con Nosotros
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  {featuredPosts.length > 0 && (
+    <section class="blog bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Artículos Destacados</h2>
+          <p>Información actualizada sobre discapacidad</p>
+        </div>
+        <div class="blog-grid">
+          {featuredPosts.map((post) => (
+            <article class="blog-card">
+              <div class="blog-category">{post.data.category}</div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <a href={`/blog/${post.slug}`} class="blog-link">
+                Leer más →
+              </a>
+            </article>
+          ))}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <Button href="/blog" variant="outline">
+            Ver Todos los Artículos
+          </Button>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Final Section -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Necesitas Ayuda con tu Grado de Discapacidad?</h2>
+        <p>Solicita una consulta gratuita y te asesoraremos sin compromiso</p>
+        <Button href="/contacto" variant="primary" size="lg">
+          Solicitar Consulta Gratuita
+        </Button>
+        <p class="cta-info">
+          <small>Atención personalizada • Confidencial • Sin compromiso</small>
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-20) 0;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-6);
+    color: var(--primary-blue);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .hero-features {
+      flex-direction: row;
+      gap: var(--space-6);
+    }
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--primary-green);
+    font-weight: var(--font-medium);
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .hero-cta {
+      flex-direction: row;
+    }
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .section-header p {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .service-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .service-card p {
+    color: var(--medium-gray);
+    margin-bottom: var(--space-4);
+  }
+
+  .service-link {
+    color: var(--primary-green);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+  }
+
+  .service-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Process */
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-steps {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: 0 auto var(--space-4);
+  }
+
+  .step h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .step p {
+    color: var(--medium-gray);
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+  }
+
+  .testimonial-rating {
+    color: var(--warning);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .testimonial-text {
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-bottom: var(--space-4);
+  }
+
+  .testimonial-author strong {
+    display: block;
+    color: var(--primary-blue);
+  }
+
+  .testimonial-author span {
+    color: var(--medium-gray);
+    font-size: var(--text-sm);
+  }
+
+  /* FAQ */
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    font-weight: var(--font-semibold);
+    color: var(--primary-blue);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-answer {
+    margin-top: var(--space-4);
+    color: var(--medium-gray);
+  }
+
+  .faq-cta {
+    text-align: center;
+    margin-top: var(--space-12);
+  }
+
+  .faq-cta p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Blog */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .blog-card {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+  }
+
+  .blog-category {
+    display: inline-block;
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .blog-card p {
+    color: var(--medium-gray);
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-link {
+    color: var(--primary-green);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+  }
+
+  .blog-link:hover {
+    text-decoration: underline;
+  }
+
+  /* CTA Final */
+  .cta-final {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-info {
+    margin-top: var(--space-6);
+    opacity: 0.9;
+  }
+</style>

@@ -1,0 +1,470 @@
+[
+  {
+    "slug": "madrid",
+    "nombre": "Madrid",
+    "capital": "Madrid",
+    "comunidad": "Comunidad de Madrid",
+    "codigo": "28",
+    "ciudades": ["Madrid", "Móstoles", "Alcalá de Henares", "Fuenlabrada", "Leganés", "Getafe"],
+    "poblacion": 6779888
+  },
+  {
+    "slug": "barcelona",
+    "nombre": "Barcelona",
+    "capital": "Barcelona",
+    "comunidad": "Cataluña",
+    "codigo": "08",
+    "ciudades": ["Barcelona", "L'Hospitalet de Llobregat", "Badalona", "Terrassa", "Sabadell"],
+    "poblacion": 5743402
+  },
+  {
+    "slug": "valencia",
+    "nombre": "Valencia",
+    "capital": "Valencia",
+    "comunidad": "Comunidad Valenciana",
+    "codigo": "46",
+    "ciudades": ["Valencia", "Gandia", "Torrent", "Paterna", "Sagunto"],
+    "poblacion": 2591875
+  },
+  {
+    "slug": "sevilla",
+    "nombre": "Sevilla",
+    "capital": "Sevilla",
+    "comunidad": "Andalucía",
+    "codigo": "41",
+    "ciudades": ["Sevilla", "Dos Hermanas", "Alcalá de Guadaíra", "Utrera", "Mairena del Aljarafe"],
+    "poblacion": 1950219
+  },
+  {
+    "slug": "alicante",
+    "nombre": "Alicante",
+    "capital": "Alicante",
+    "comunidad": "Comunidad Valenciana",
+    "codigo": "03",
+    "ciudades": ["Alicante", "Elche", "Torrevieja", "Orihuela", "Benidorm"],
+    "poblacion": 1879888
+  },
+  {
+    "slug": "malaga",
+    "nombre": "Málaga",
+    "capital": "Málaga",
+    "comunidad": "Andalucía",
+    "codigo": "29",
+    "ciudades": ["Málaga", "Marbella", "Mijas", "Vélez-Málaga", "Fuengirola"],
+    "poblacion": 1716114
+  },
+  {
+    "slug": "murcia",
+    "nombre": "Murcia",
+    "capital": "Murcia",
+    "comunidad": "Región de Murcia",
+    "codigo": "30",
+    "ciudades": ["Murcia", "Cartagena", "Lorca", "Molina de Segura", "Alcantarilla"],
+    "poblacion": 1511251
+  },
+  {
+    "slug": "cadiz",
+    "nombre": "Cádiz",
+    "capital": "Cádiz",
+    "comunidad": "Andalucía",
+    "codigo": "11",
+    "ciudades": ["Jerez de la Frontera", "Algeciras", "Cádiz", "San Fernando", "El Puerto de Santa María"],
+    "poblacion": 1245164
+  },
+  {
+    "slug": "vizcaya",
+    "nombre": "Vizcaya",
+    "capital": "Bilbao",
+    "comunidad": "País Vasco",
+    "codigo": "48",
+    "ciudades": ["Bilbao", "Barakaldo", "Getxo", "Portugalete", "Santurtzi"],
+    "poblacion": 1152651
+  },
+  {
+    "slug": "zaragoza",
+    "nombre": "Zaragoza",
+    "capital": "Zaragoza",
+    "comunidad": "Aragón",
+    "codigo": "50",
+    "ciudades": ["Zaragoza", "Calatayud", "Utebo", "Ejea de los Caballeros"],
+    "poblacion": 975428
+  },
+  {
+    "slug": "asturias",
+    "nombre": "Asturias",
+    "capital": "Oviedo",
+    "comunidad": "Principado de Asturias",
+    "codigo": "33",
+    "ciudades": ["Gijón", "Oviedo", "Avilés", "Siero", "Langreo"],
+    "poblacion": 1018784
+  },
+  {
+    "slug": "las-palmas",
+    "nombre": "Las Palmas",
+    "capital": "Las Palmas de Gran Canaria",
+    "comunidad": "Canarias",
+    "codigo": "35",
+    "ciudades": ["Las Palmas de Gran Canaria", "Telde", "Santa Lucía de Tirajana", "Arucas"],
+    "poblacion": 1150962
+  },
+  {
+    "slug": "islas-baleares",
+    "nombre": "Islas Baleares",
+    "capital": "Palma de Mallorca",
+    "comunidad": "Islas Baleares",
+    "codigo": "07",
+    "ciudades": ["Palma", "Calvià", "Manacor", "Ibiza", "Mahón"],
+    "poblacion": 1210048
+  },
+  {
+    "slug": "pontevedra",
+    "nombre": "Pontevedra",
+    "capital": "Pontevedra",
+    "comunidad": "Galicia",
+    "codigo": "36",
+    "ciudades": ["Vigo", "Pontevedra", "Vilagarcía de Arousa", "Redondela", "Cangas"],
+    "poblacion": 942665
+  },
+  {
+    "slug": "cordoba",
+    "nombre": "Córdoba",
+    "capital": "Córdoba",
+    "comunidad": "Andalucía",
+    "codigo": "14",
+    "ciudades": ["Córdoba", "Lucena", "Puente Genil", "Montilla", "Palma del Río"],
+    "poblacion": 782979
+  },
+  {
+    "slug": "valladolid",
+    "nombre": "Valladolid",
+    "capital": "Valladolid",
+    "comunidad": "Castilla y León",
+    "codigo": "47",
+    "ciudades": ["Valladolid", "Medina del Campo", "Laguna de Duero", "Arroyo de la Encomienda"],
+    "poblacion": 520649
+  },
+  {
+    "slug": "tarragona",
+    "nombre": "Tarragona",
+    "capital": "Tarragona",
+    "comunidad": "Cataluña",
+    "codigo": "43",
+    "ciudades": ["Tarragona", "Reus", "Tortosa", "El Vendrell", "Cambrils"],
+    "poblacion": 818977
+  },
+  {
+    "slug": "granada",
+    "nombre": "Granada",
+    "capital": "Granada",
+    "comunidad": "Andalucía",
+    "codigo": "18",
+    "ciudades": ["Granada", "Motril", "Almuñécar", "Loja", "Baza"],
+    "poblacion": 921338
+  },
+  {
+    "slug": "santa-cruz-de-tenerife",
+    "nombre": "Santa Cruz de Tenerife",
+    "capital": "Santa Cruz de Tenerife",
+    "comunidad": "Canarias",
+    "codigo": "38",
+    "ciudades": ["Santa Cruz de Tenerife", "San Cristóbal de La Laguna", "Arona", "Adeje"],
+    "poblacion": 1098459
+  },
+  {
+    "slug": "la-coruna",
+    "nombre": "La Coruña",
+    "capital": "La Coruña",
+    "comunidad": "Galicia",
+    "codigo": "15",
+    "ciudades": ["La Coruña", "Santiago de Compostela", "Ferrol", "Narón", "Oleiros"],
+    "poblacion": 1122862
+  },
+  {
+    "slug": "castellon",
+    "nombre": "Castellón",
+    "capital": "Castellón de la Plana",
+    "comunidad": "Comunidad Valenciana",
+    "codigo": "12",
+    "ciudades": ["Castellón de la Plana", "Vila-real", "Burriana", "Vinaròs"],
+    "poblacion": 579962
+  },
+  {
+    "slug": "jaen",
+    "nombre": "Jaén",
+    "capital": "Jaén",
+    "comunidad": "Andalucía",
+    "codigo": "23",
+    "ciudades": ["Jaén", "Linares", "Andújar", "Úbeda", "Martos"],
+    "poblacion": 631381
+  },
+  {
+    "slug": "almeria",
+    "nombre": "Almería",
+    "capital": "Almería",
+    "comunidad": "Andalucía",
+    "codigo": "04",
+    "ciudades": ["Almería", "Roquetas de Mar", "El Ejido", "Níjar", "Adra"],
+    "poblacion": 739657
+  },
+  {
+    "slug": "cantabria",
+    "nombre": "Cantabria",
+    "capital": "Santander",
+    "comunidad": "Cantabria",
+    "codigo": "39",
+    "ciudades": ["Santander", "Torrelavega", "Castro-Urdiales", "Camargo"],
+    "poblacion": 582905
+  },
+  {
+    "slug": "huelva",
+    "nombre": "Huelva",
+    "capital": "Huelva",
+    "comunidad": "Andalucía",
+    "codigo": "21",
+    "ciudades": ["Huelva", "Lepe", "Almonte", "Moguer", "Isla Cristina"],
+    "poblacion": 524278
+  },
+  {
+    "slug": "badajoz",
+    "nombre": "Badajoz",
+    "capital": "Badajoz",
+    "comunidad": "Extremadura",
+    "codigo": "06",
+    "ciudades": ["Badajoz", "Mérida", "Don Benito", "Almendralejo", "Villanueva de la Serena"],
+    "poblacion": 673375
+  },
+  {
+    "slug": "leon",
+    "nombre": "León",
+    "capital": "León",
+    "comunidad": "Castilla y León",
+    "codigo": "24",
+    "ciudades": ["León", "Ponferrada", "San Andrés del Rabanedo", "Villaquilambre"],
+    "poblacion": 451587
+  },
+  {
+    "slug": "girona",
+    "nombre": "Girona",
+    "capital": "Girona",
+    "comunidad": "Cataluña",
+    "codigo": "17",
+    "ciudades": ["Girona", "Figueres", "Blanes", "Lloret de Mar", "Olot"],
+    "poblacion": 801998
+  },
+  {
+    "slug": "toledo",
+    "nombre": "Toledo",
+    "capital": "Toledo",
+    "comunidad": "Castilla-La Mancha",
+    "codigo": "45",
+    "ciudades": ["Talavera de la Reina", "Toledo", "Illescas", "Seseña"],
+    "poblacion": 710290
+  },
+  {
+    "slug": "guipuzcoa",
+    "nombre": "Guipúzcoa",
+    "capital": "San Sebastián",
+    "comunidad": "País Vasco",
+    "codigo": "20",
+    "ciudades": ["San Sebastián", "Irún", "Éibar", "Rentería", "Zarautz"],
+    "poblacion": 724768
+  },
+  {
+    "slug": "ciudad-real",
+    "nombre": "Ciudad Real",
+    "capital": "Ciudad Real",
+    "comunidad": "Castilla-La Mancha",
+    "codigo": "13",
+    "ciudades": ["Ciudad Real", "Puertollano", "Tomelloso", "Alcázar de San Juan", "Valdepeñas"],
+    "poblacion": 495761
+  },
+  {
+    "slug": "lugo",
+    "nombre": "Lugo",
+    "capital": "Lugo",
+    "comunidad": "Galicia",
+    "codigo": "27",
+    "ciudades": ["Lugo", "Monforte de Lemos", "Viveiro", "Villalba"],
+    "poblacion": 328726
+  },
+  {
+    "slug": "lleida",
+    "nombre": "Lleida",
+    "capital": "Lleida",
+    "comunidad": "Cataluña",
+    "codigo": "25",
+    "ciudades": ["Lleida", "Tàrrega", "Mollerussa", "Balaguer"],
+    "poblacion": 439253
+  },
+  {
+    "slug": "caceres",
+    "nombre": "Cáceres",
+    "capital": "Cáceres",
+    "comunidad": "Extremadura",
+    "codigo": "10",
+    "ciudades": ["Cáceres", "Plasencia", "Navalmoral de la Mata", "Coria"],
+    "poblacion": 392975
+  },
+  {
+    "slug": "la-rioja",
+    "nombre": "La Rioja",
+    "capital": "Logroño",
+    "comunidad": "La Rioja",
+    "codigo": "26",
+    "ciudades": ["Logroño", "Calahorra", "Arnedo", "Haro"],
+    "poblacion": 319796
+  },
+  {
+    "slug": "albacete",
+    "nombre": "Albacete",
+    "capital": "Albacete",
+    "comunidad": "Castilla-La Mancha",
+    "codigo": "02",
+    "ciudades": ["Albacete", "Hellín", "Villarrobledo", "Almansa"],
+    "poblacion": 388270
+  },
+  {
+    "slug": "orense",
+    "nombre": "Orense",
+    "capital": "Orense",
+    "comunidad": "Galicia",
+    "codigo": "32",
+    "ciudades": ["Orense", "Verín", "O Barco de Valdeorras", "Xinzo de Limia"],
+    "poblacion": 305223
+  },
+  {
+    "slug": "burgos",
+    "nombre": "Burgos",
+    "capital": "Burgos",
+    "comunidad": "Castilla y León",
+    "codigo": "09",
+    "ciudades": ["Burgos", "Miranda de Ebro", "Aranda de Duero"],
+    "poblacion": 356958
+  },
+  {
+    "slug": "salamanca",
+    "nombre": "Salamanca",
+    "capital": "Salamanca",
+    "comunidad": "Castilla y León",
+    "codigo": "37",
+    "ciudades": ["Salamanca", "Béjar", "Ciudad Rodrigo", "Santa Marta de Tormes"],
+    "poblacion": 326934
+  },
+  {
+    "slug": "huesca",
+    "nombre": "Huesca",
+    "capital": "Huesca",
+    "comunidad": "Aragón",
+    "codigo": "22",
+    "ciudades": ["Huesca", "Monzón", "Barbastro", "Jaca"],
+    "poblacion": 220461
+  },
+  {
+    "slug": "navarra",
+    "nombre": "Navarra",
+    "capital": "Pamplona",
+    "comunidad": "Comunidad Foral de Navarra",
+    "codigo": "31",
+    "ciudades": ["Pamplona", "Tudela", "Barañáin", "Burlada", "Estella"],
+    "poblacion": 661197
+  },
+  {
+    "slug": "alava",
+    "nombre": "Álava",
+    "capital": "Vitoria-Gasteiz",
+    "comunidad": "País Vasco",
+    "codigo": "01",
+    "ciudades": ["Vitoria-Gasteiz", "Llodio", "Amurrio"],
+    "poblacion": 333547
+  },
+  {
+    "slug": "cuenca",
+    "nombre": "Cuenca",
+    "capital": "Cuenca",
+    "comunidad": "Castilla-La Mancha",
+    "codigo": "16",
+    "ciudades": ["Cuenca", "Tarancón", "Quintanar del Rey"],
+    "poblacion": 198468
+  },
+  {
+    "slug": "guadalajara",
+    "nombre": "Guadalajara",
+    "capital": "Guadalajara",
+    "comunidad": "Castilla-La Mancha",
+    "codigo": "19",
+    "ciudades": ["Guadalajara", "Azuqueca de Henares", "Alovera"],
+    "poblacion": 271470
+  },
+  {
+    "slug": "zamora",
+    "nombre": "Zamora",
+    "capital": "Zamora",
+    "comunidad": "Castilla y León",
+    "codigo": "49",
+    "ciudades": ["Zamora", "Benavente", "Toro"],
+    "poblacion": 168720
+  },
+  {
+    "slug": "teruel",
+    "nombre": "Teruel",
+    "capital": "Teruel",
+    "comunidad": "Aragón",
+    "codigo": "44",
+    "ciudades": ["Teruel", "Alcañiz", "Andorra"],
+    "poblacion": 133950
+  },
+  {
+    "slug": "avila",
+    "nombre": "Ávila",
+    "capital": "Ávila",
+    "comunidad": "Castilla y León",
+    "codigo": "05",
+    "ciudades": ["Ávila", "Arévalo"],
+    "poblacion": 157640
+  },
+  {
+    "slug": "segovia",
+    "nombre": "Segovia",
+    "capital": "Segovia",
+    "comunidad": "Castilla y León",
+    "codigo": "40",
+    "ciudades": ["Segovia", "Cuéllar", "El Espinar"],
+    "poblacion": 153571
+  },
+  {
+    "slug": "palencia",
+    "nombre": "Palencia",
+    "capital": "Palencia",
+    "comunidad": "Castilla y León",
+    "codigo": "34",
+    "ciudades": ["Palencia", "Guardo", "Aguilar de Campoo"],
+    "poblacion": 159389
+  },
+  {
+    "slug": "soria",
+    "nombre": "Soria",
+    "capital": "Soria",
+    "comunidad": "Castilla y León",
+    "codigo": "42",
+    "ciudades": ["Soria", "Almazán", "El Burgo de Osma"],
+    "poblacion": 88636
+  },
+  {
+    "slug": "ceuta",
+    "nombre": "Ceuta",
+    "capital": "Ceuta",
+    "comunidad": "Ceuta",
+    "codigo": "51",
+    "ciudades": ["Ceuta"],
+    "poblacion": 83517
+  },
+  {
+    "slug": "melilla",
+    "nombre": "Melilla",
+    "capital": "Melilla",
+    "comunidad": "Melilla",
+    "codigo": "52",
+    "ciudades": ["Melilla"],
+    "poblacion": 86487
+  }
+]

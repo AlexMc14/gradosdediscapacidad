@@ -1,0 +1,490 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import serviciosData from '@data/servicios.json';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Cuánto cuesta el peritaje médico?',
+    answer: 'El coste varía según la complejidad del caso. Ofrecemos una primera consulta gratuita donde analizamos tu situación y te proporcionamos un presupuesto personalizado sin compromiso.',
+  },
+  {
+    question: '¿Cuánto tiempo se tarda en elaborar un informe pericial?',
+    answer: 'Normalmente entre 7 y 15 días laborables, dependiendo de la complejidad del caso y la documentación médica disponible.',
+  },
+  {
+    question: '¿Puedo solicitar el peritaje antes de la valoración oficial?',
+    answer: 'Sí, de hecho es recomendable. Un informe pericial previo te ayuda a preparar mejor tu caso y aumenta las probabilidades de éxito en la valoración oficial.',
+  },
+  {
+    question: '¿Trabajáis en toda España?',
+    answer: 'Sí, ofrecemos nuestros servicios en las 52 provincias de España, tanto de forma presencial como online según las necesidades del caso.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Servicios de Peritaje Médico y Valoración de Discapacidad"
+  description="Servicios especializados en peritaje médico, valoración de discapacidad, recursos, revisiones e incapacidad laboral. Expertos en toda España."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Nuestros Servicios Especializados</h1>
+      <p class="hero-description">
+        Ofrecemos un amplio catálogo de servicios profesionales para ayudarte en todo
+        el proceso de reconocimiento y valoración de tu grado de discapacidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-grid">
+        {serviciosData.map((servicio) => (
+          <article class="service-card">
+            <div class="service-icon">{servicio.icon}</div>
+            <h2>{servicio.title}</h2>
+            <p class="service-description">{servicio.description}</p>
+            <ul class="service-features">
+              {servicio.features?.map((feature: string) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <a href={servicio.url} class="service-link">
+              Más información →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <h2>Cómo Trabajamos</h2>
+      <p class="section-intro">Un proceso transparente y profesional en 4 pasos</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Consulta Inicial</h3>
+          <p>Análisis gratuito de tu caso y evaluación de viabilidad. Sin compromiso.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Revisión Documental</h3>
+          <p>Estudio exhaustivo de tu documentación médica e historial clínico.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Informe Pericial</h3>
+          <p>Elaboración del informe médico especializado según el baremo oficial.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Seguimiento</h3>
+          <p>Acompañamiento durante todo el proceso hasta la resolución final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-section">
+    <div class="container">
+      <h2>¿Por Qué Elegirnos?</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Experiencia Acreditada</h3>
+          <p>Más de 10 años ayudando a personas a conseguir el reconocimiento de su discapacidad.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Profesionales Especializados</h3>
+          <p>Equipo de peritos médicos colegiados con amplia experiencia en valoración de discapacidad.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Alta Tasa de Éxito</h3>
+          <p>85% de éxito en recursos y reclamaciones gracias a informes periciales rigurosos.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Cobertura Nacional</h3>
+          <p>Trabajamos en todas las provincias de España con atención presencial y online.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Atención Personalizada</h3>
+          <p>Cada caso es único y recibe un tratamiento individualizado y cercano.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Confidencialidad Total</h3>
+          <p>Protección absoluta de tus datos personales y médicos según normativa RGPD.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+
+      <div class="faq-list">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Necesitas Ayuda con Tu Caso?</h2>
+      <p>Solicita tu consulta gratuita y te asesoraremos sin compromiso</p>
+      <a href="/contacto" class="cta-button">Solicitar Consulta Gratuita</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: var(--space-16) 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    transition: all var(--transition-base);
+  }
+
+  .service-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-card h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .service-description {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-features {
+    list-style: none;
+    margin: 0 0 var(--space-6) 0;
+    padding: 0;
+  }
+
+  .service-features li {
+    color: var(--medium-gray);
+    padding: var(--space-2) 0;
+    padding-left: var(--space-6);
+    position: relative;
+  }
+
+  .service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+  }
+
+  .service-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: var(--font-semibold);
+    transition: color var(--transition-fast);
+  }
+
+  .service-link:hover {
+    color: #047857;
+    text-decoration: underline;
+  }
+
+  /* Process Section */
+  .process-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .process-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: var(--space-12);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-steps {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .step {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: 0 auto var(--space-4);
+  }
+
+  .step h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .step p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  /* Why Section */
+  .why-section {
+    padding: var(--space-16) 0;
+  }
+
+  .why-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .benefit {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+  }
+
+  .benefit h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .benefit p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

@@ -1,0 +1,8 @@
+# robots.txt para gradosdediscapacidad.es
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://gradosdediscapacidad.es/sitemap-index.xml

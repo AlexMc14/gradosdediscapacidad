@@ -1,0 +1,129 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+
+const lastUpdated = new Date('2025-01-15');
+---
+
+<PageLayout
+  title="Aviso Legal | Grados de Discapacidad"
+  description="Aviso Legal de Grados de Discapacidad. Información sobre los términos y condiciones de uso del sitio web."
+  noindex={true}
+>
+  <section class="legal-page">
+    <div class="container">
+      <h1>Aviso Legal</h1>
+      <p class="last-updated">Última actualización: {lastUpdated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <div class="legal-content">
+        <h2>1. Datos Identificativos</h2>
+        <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos identificativos del titular de este sitio web:</p>
+        <ul>
+          <li><strong>Denominación:</strong> Grados de Discapacidad</li>
+          <li><strong>Sitio web:</strong> gradosdediscapacidad.es</li>
+        </ul>
+
+        <h2>2. Objeto</h2>
+        <p>El presente aviso legal regula el uso y utilización del sitio web gradosdediscapacidad.es, del que es titular Grados de Discapacidad.</p>
+        <p>La navegación por el sitio web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+
+        <h2>3. Servicios</h2>
+        <p>A través del sitio web, se facilita a los usuarios información sobre los servicios de peritaje médico y valoración de grados de discapacidad que prestamos, así como la posibilidad de contactar con nosotros para solicitar información o presupuestos.</p>
+
+        <h2>4. Responsabilidad</h2>
+        <p>El titular del sitio web se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web, siempre que esta información haya sido manipulada o introducida por un tercero ajeno al mismo.</p>
+        <p>El contenido del sitio web es de carácter general y tiene una finalidad meramente informativa, sin que se garantice plenamente el acceso a todos los contenidos, ni su exhaustividad, corrección, vigencia o actualidad.</p>
+
+        <h2>5. Propiedad Intelectual e Industrial</h2>
+        <p>Todos los contenidos del sitio web, salvo que se indique lo contrario, son titularidad exclusiva de Grados de Discapacidad y, en particular, el diseño gráfico, código fuente, logos, textos, gráficos, ilustraciones, fotografías y demás elementos que aparecen en el sitio web.</p>
+        <p>Queda prohibida la reproducción, distribución, comunicación pública y transformación de los contenidos del sitio web sin la autorización previa y por escrito del titular.</p>
+
+        <h2>6. Enlaces (Links)</h2>
+        <p>El sitio web puede contener enlaces a otros sitios web de terceros. Grados de Discapacidad no controla ni es responsable del contenido de dichos sitios web.</p>
+
+        <h2>7. Protección de Datos</h2>
+        <p>Para el tratamiento de datos personales, consulte nuestra <a href="/legal/privacidad">Política de Privacidad</a>.</p>
+
+        <h2>8. Cookies</h2>
+        <p>Este sitio web utiliza cookies. Para más información, consulte nuestra <a href="/legal/cookies">Política de Cookies</a>.</p>
+
+        <h2>9. Legislación Aplicable y Jurisdicción</h2>
+        <p>La relación entre el usuario y Grados de Discapacidad se regirá por la normativa española vigente. Cualquier controversia se someterá a los Juzgados y Tribunales españoles.</p>
+
+        <h2>10. Contacto</h2>
+        <p>Para cualquier consulta sobre estos términos legales, puede contactar con nosotros a través de nuestro <a href="/contacto">formulario de contacto</a>.</p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-16) 0;
+    background-color: var(--white);
+  }
+
+  .legal-page h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .last-updated {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: var(--space-12);
+    font-style: italic;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--light-gray);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+  }
+
+  .legal-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-2xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--primary-green);
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p,
+  .legal-content li {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  .legal-content ul {
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .legal-content li {
+    margin-bottom: var(--space-2);
+  }
+
+  .legal-content a {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .legal-content a:hover {
+    color: #047857;
+  }
+
+  .legal-content strong {
+    color: var(--primary-blue);
+    font-weight: var(--font-semibold);
+  }
+</style>

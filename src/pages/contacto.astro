@@ -1,0 +1,411 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import ContactForm from '@components/forms/ContactForm.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Cuánto tiempo tardan en responder?',
+    answer: 'Normalmente respondemos a todas las consultas en un plazo máximo de 24-48 horas laborables.',
+  },
+  {
+    question: '¿La consulta inicial es gratuita?',
+    answer: 'Sí, la primera consulta y el análisis de tu caso es completamente gratuito y sin compromiso.',
+  },
+  {
+    question: '¿Atienden en toda España?',
+    answer: 'Sí, trabajamos en todas las provincias de España, tanto de forma presencial como online según las necesidades de cada caso.',
+  },
+  {
+    question: '¿Qué información debo preparar?',
+    answer: 'Es útil tener a mano tus informes médicos, documentación sobre tu situación actual y cualquier resolución previa relacionada con la valoración de discapacidad.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Contacto | Solicita Presupuesto Gratuito"
+  description="Contacta con nuestros expertos en peritaje médico y valoración de discapacidad. Primera consulta gratuita. Atendemos en toda España."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Solicita Tu Presupuesto Gratuito</h1>
+      <p class="hero-description">
+        Rellena el formulario y uno de nuestros expertos se pondrá en contacto contigo
+        en menos de 24 horas para analizar tu caso sin ningún compromiso.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h2>Cuéntanos tu caso</h2>
+          <p class="section-intro">
+            Completa el formulario con tus datos y cuéntanos brevemente tu situación.
+            Nuestro equipo analizará tu caso y te contactará con un plan personalizado.
+          </p>
+          <ContactForm />
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Cobertura Nacional</h3>
+            <p>
+              Trabajamos en las 52 provincias de España, ofreciendo atención
+              tanto presencial como online según tus necesidades.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">⏰</div>
+            <h3>Horario de Atención</h3>
+            <p>
+              <strong>Lunes a Viernes</strong><br />
+              9:00 - 20:00 horas
+            </p>
+            <p class="info-note">
+              Fuera de este horario, puedes enviar tu consulta por el formulario
+              y te responderemos el siguiente día laboral.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🆓</div>
+            <h3>Primera Consulta Gratuita</h3>
+            <p>
+              Analizamos tu caso sin coste ni compromiso. Recibirás un
+              asesoramiento personalizado sobre las posibilidades de tu situación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🔒</div>
+            <h3>Confidencialidad</h3>
+            <p>
+              Toda la información que nos proporciones será tratada con total
+              confidencialidad según la normativa RGPD.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre el Contacto</h2>
+      <div class="faq-grid">
+        {
+          faqData.map((faq) => (
+            <div class="faq-item">
+              <h3 class="faq-question">{faq.question}</h3>
+              <p class="faq-answer">{faq.answer}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="trust-section">
+    <div class="container">
+      <h2>Por Qué Elegirnos</h2>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-number">+10</div>
+          <div class="trust-label">Años de Experiencia</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">85%</div>
+          <div class="trust-label">Tasa de Éxito</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">+500</div>
+          <div class="trust-label">Clientes Atendidos</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">52</div>
+          <div class="trust-label">Provincias Cubiertas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Prefieres Conocer Más Sobre Nuestros Servicios?</h2>
+      <p>Explora toda la información sobre peritaje médico y valoración de discapacidad</p>
+      <div class="cta-buttons">
+        <a href="/servicios" class="cta-button primary">Ver Servicios</a>
+        <a href="/blog" class="cta-button secondary">Leer Blog</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0 var(--space-12) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: var(--space-16) 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--space-16);
+    }
+  }
+
+  .contact-form-container h2 {
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-intro {
+    color: var(--medium-gray);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+  }
+
+  .info-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+  }
+
+  .info-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .info-card p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin-bottom: var(--space-2);
+  }
+
+  .info-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-note {
+    font-size: var(--text-sm);
+    color: var(--medium-gray);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  /* Trust Section */
+  .trust-section {
+    padding: var(--space-16) 0;
+  }
+
+  .trust-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .trust-item {
+    text-align: center;
+    padding: var(--space-6);
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+    border-radius: var(--radius-lg);
+  }
+
+  .trust-number {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-2);
+  }
+
+  .trust-label {
+    color: var(--dark-gray);
+    font-weight: var(--font-medium);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .cta-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button.primary {
+    background-color: var(--white);
+    color: var(--primary-blue);
+  }
+
+  .cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-button.secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .cta-button.secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+  }
+</style>

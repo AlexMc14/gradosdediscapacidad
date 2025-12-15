@@ -1,0 +1,774 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Qué porcentaje necesito para obtener beneficios?',
+    answer: 'A partir del 33% de discapacidad ya puedes acceder a beneficios como deducciones fiscales, reserva de plazas en empleo público y ayudas específicas. Con el 65% se amplían significativamente las prestaciones y ayudas disponibles.',
+  },
+  {
+    question: '¿Cuánto tarda el proceso de valoración?',
+    answer: 'El plazo legal máximo es de 6 meses desde la presentación de la solicitud. En la práctica, suele oscilar entre 3 y 8 meses dependiendo de la comunidad autónoma y la carga de trabajo del tribunal médico.',
+  },
+  {
+    question: '¿Puedo trabajar con un certificado de discapacidad?',
+    answer: 'Sí, el reconocimiento de discapacidad no impide trabajar. De hecho, existen incentivos laborales para empresas que contratan personas con discapacidad y cuotas de reserva en empleo público.',
+  },
+  {
+    question: '¿La valoración es para toda la vida?',
+    answer: 'Depende del caso. Puede ser indefinida si la patología es irreversible, o temporal con fecha de revisión si existe posibilidad de mejoría o empeoramiento. También puedes solicitar revisión por agravamiento en cualquier momento.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Valoración de Discapacidad | Certificado Oficial | Expertos"
+  description="Asesoramiento especializado para la valoración de discapacidad. Te ayudamos a conseguir el certificado oficial con el porcentaje que te corresponde. Primera consulta gratuita."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Valoración de Discapacidad</h1>
+      <p class="hero-description">
+        Te ayudamos a obtener el reconocimiento oficial del grado de discapacidad que te corresponde,
+        preparando toda la documentación necesaria para conseguir la mejor valoración posible.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Qué es la Valoración de Discapacidad?</h2>
+          <p>
+            La valoración de discapacidad es el procedimiento administrativo mediante el cual un equipo
+            multiprofesional de las administraciones públicas evalúa las limitaciones que presenta una
+            persona y determina el porcentaje de discapacidad que le corresponde según el baremo oficial.
+          </p>
+          <p>
+            Este certificado es el documento que te permite acceder a todos los beneficios, ayudas y
+            prestaciones establecidas para personas con discapacidad, tanto a nivel laboral como fiscal,
+            de movilidad, vivienda y servicios sociales.
+          </p>
+
+          <h2>Grados de Discapacidad</h2>
+          <div class="grados-grid">
+            <div class="grado-card">
+              <div class="grado-header grado-33">
+                <h3>33% - 64%</h3>
+                <p class="grado-subtitle">Discapacidad Moderada</p>
+              </div>
+              <ul class="grado-benefits">
+                <li>Deducciones fiscales en IRPF</li>
+                <li>Reserva de empleo público (5%)</li>
+                <li>Protección contra despido</li>
+                <li>Ayudas para movilidad</li>
+                <li>Descuentos en transporte</li>
+                <li>Bonificaciones culturales</li>
+              </ul>
+            </div>
+
+            <div class="grado-card">
+              <div class="grado-header grado-65">
+                <h3>65% - 74%</h3>
+                <p class="grado-subtitle">Discapacidad Grave</p>
+              </div>
+              <ul class="grado-benefits">
+                <li>Todos los beneficios del 33%</li>
+                <li>Prestación económica LISMI</li>
+                <li>Pensión no contributiva (si procede)</li>
+                <li>Mayores deducciones fiscales</li>
+                <li>Ayudas económicas específicas</li>
+                <li>Tarjeta de aparcamiento</li>
+              </ul>
+            </div>
+
+            <div class="grado-card">
+              <div class="grado-header grado-75">
+                <h3>75% o más</h3>
+                <p class="grado-subtitle">Gran Invalidez</p>
+              </div>
+              <ul class="grado-benefits">
+                <li>Todos los beneficios anteriores</li>
+                <li>Complemento de tercera persona</li>
+                <li>Prestación por gran invalidez</li>
+                <li>Máximas deducciones fiscales</li>
+                <li>Ayudas para cuidados</li>
+                <li>Asistencia personal</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Cómo Te Ayudamos en la Valoración</h2>
+          <div class="servicios-valoracion">
+            <div class="servicio-item">
+              <div class="servicio-number">1</div>
+              <div class="servicio-content">
+                <h3>Análisis Previo Gratuito</h3>
+                <p>
+                  Estudiamos tu caso sin coste ni compromiso. Evaluamos tus patologías, limitaciones
+                  y documentación médica para estimar el porcentaje que podrías obtener.
+                </p>
+              </div>
+            </div>
+
+            <div class="servicio-item">
+              <div class="servicio-number">2</div>
+              <div class="servicio-content">
+                <h3>Preparación de Documentación</h3>
+                <p>
+                  Identificamos qué informes médicos son necesarios, cuáles faltan y cómo completar
+                  tu expediente para maximizar las probabilidades de éxito.
+                </p>
+              </div>
+            </div>
+
+            <div class="servicio-item">
+              <div class="servicio-number">3</div>
+              <div class="servicio-content">
+                <h3>Informe Pericial Especializado</h3>
+                <p>
+                  Elaboramos un informe médico profesional que fundamenta técnicamente el grado de
+                  discapacidad que te corresponde según el baremo oficial vigente.
+                </p>
+              </div>
+            </div>
+
+            <div class="servicio-item">
+              <div class="servicio-number">4</div>
+              <div class="servicio-content">
+                <h3>Asesoramiento para la Comparecencia</h3>
+                <p>
+                  Te orientamos sobre cómo actuar en la cita con el tribunal médico, qué aspectos
+                  destacar y cómo explicar tus limitaciones de forma clara y efectiva.
+                </p>
+              </div>
+            </div>
+
+            <div class="servicio-item">
+              <div class="servicio-number">5</div>
+              <div class="servicio-content">
+                <h3>Seguimiento del Expediente</h3>
+                <p>
+                  Acompañamiento durante todo el proceso hasta recibir la resolución. Si es
+                  desfavorable, te asesoramos sobre los pasos a seguir.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Patologías que Valoramos</h2>
+          <p>
+            Trabajamos con todo tipo de patologías y condiciones médicas que pueden dar lugar
+            al reconocimiento de discapacidad:
+          </p>
+
+          <div class="patologias-grid">
+            <div class="patologia-category">
+              <h3>Trastornos Mentales</h3>
+              <ul>
+                <li>Depresión mayor</li>
+                <li>Trastorno bipolar</li>
+                <li>Esquizofrenia</li>
+                <li>Trastornos de ansiedad</li>
+                <li>TOC</li>
+              </ul>
+            </div>
+
+            <div class="patologia-category">
+              <h3>Enfermedades Neurológicas</h3>
+              <ul>
+                <li>Esclerosis múltiple</li>
+                <li>Parkinson</li>
+                <li>Epilepsia</li>
+                <li>ELA</li>
+                <li>Ictus con secuelas</li>
+              </ul>
+            </div>
+
+            <div class="patologia-category">
+              <h3>Dolor Crónico</h3>
+              <ul>
+                <li>Fibromialgia</li>
+                <li>Hernias discales</li>
+                <li>Artrosis avanzada</li>
+                <li>Síndrome fatiga crónica</li>
+                <li>Lumbalgia crónica</li>
+              </ul>
+            </div>
+
+            <div class="patologia-category">
+              <h3>Enfermedades Autoinmunes</h3>
+              <ul>
+                <li>Artritis reumatoide</li>
+                <li>Lupus eritematoso</li>
+                <li>Espondilitis anquilosante</li>
+                <li>Enfermedad de Crohn</li>
+                <li>Colitis ulcerosa</li>
+              </ul>
+            </div>
+
+            <div class="patologia-category">
+              <h3>Discapacidades Físicas</h3>
+              <ul>
+                <li>Amputaciones</li>
+                <li>Parálisis</li>
+                <li>Movilidad reducida</li>
+                <li>Malformaciones</li>
+                <li>Lesiones medulares</li>
+              </ul>
+            </div>
+
+            <div class="patologia-category">
+              <h3>Otras Patologías</h3>
+              <ul>
+                <li>Diabetes con complicaciones</li>
+                <li>EPOC</li>
+                <li>Cardiopatías</li>
+                <li>Cáncer y secuelas</li>
+                <li>Enfermedades raras</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Diferencia con Incapacidad Laboral</h2>
+          <div class="comparison-box">
+            <div class="comparison-item">
+              <h3>Discapacidad</h3>
+              <ul>
+                <li>Valora limitaciones en la vida diaria</li>
+                <li>No impide trabajar</li>
+                <li>Da acceso a beneficios y ayudas</li>
+                <li>Gestiona Servicios Sociales</li>
+                <li>Porcentaje del 0% al 100%</li>
+                <li>Compatible con trabajar</li>
+              </ul>
+            </div>
+
+            <div class="comparison-item">
+              <h3>Incapacidad Laboral</h3>
+              <ul>
+                <li>Valora capacidad para trabajar</li>
+                <li>Limita/impide actividad laboral</li>
+                <li>Da pensión económica</li>
+                <li>Gestiona INSS o Mutua</li>
+                <li>Grados: parcial, total, absoluta, gran invalidez</li>
+                <li>Puede requerir dejar de trabajar</li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">
+            <strong>Importante:</strong> Son compatibles y puedes solicitarlas simultáneamente.
+            Tener reconocida la incapacidad laboral puede facilitar la obtención del certificado
+            de discapacidad y viceversa.
+          </p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Necesitas Valoración?</h3>
+            <p>Solicita tu análisis gratuito y te orientamos sobre el grado que puedes conseguir.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="info-card">
+            <h3>Documentación Necesaria</h3>
+            <ul class="doc-list">
+              <li>DNI o NIE</li>
+              <li>Informes médicos actualizados</li>
+              <li>Pruebas diagnósticas</li>
+              <li>Historial clínico</li>
+              <li>Tratamientos actuales</li>
+              <li>Informes de especialistas</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Plazos</h3>
+            <ul class="plazos-list">
+              <li><strong>Resolución:</strong> Máximo 6 meses</li>
+              <li><strong>Citación:</strong> 2-4 meses</li>
+              <li><strong>Recurso:</strong> 30 días</li>
+              <li><strong>Revisión:</strong> Cuando proceda</li>
+            </ul>
+          </div>
+
+          <div class="info-card benefits-card">
+            <h3>Con el 33%</h3>
+            <ul class="benefits-list">
+              <li>✓ Beneficios fiscales</li>
+              <li>✓ Empleo público</li>
+              <li>✓ Descuentos transporte</li>
+              <li>✓ Ayudas específicas</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Quieres Obtener tu Certificado de Discapacidad?</h2>
+      <p>Te ayudamos a conseguir el reconocimiento que mereces</p>
+      <a href="/contacto" class="cta-button-large">Solicitar Consulta Gratuita</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Grados Grid */
+  .grados-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .grados-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .grado-card {
+    background: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .grado-header {
+    padding: var(--space-6);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .grado-33 {
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+  }
+
+  .grado-65 {
+    background: linear-gradient(135deg, #059669, #047857);
+  }
+
+  .grado-75 {
+    background: linear-gradient(135deg, #DC2626, #B91C1C);
+  }
+
+  .grado-header h3 {
+    font-size: var(--text-2xl);
+    margin: 0 0 var(--space-2) 0;
+    color: var(--white);
+  }
+
+  .grado-subtitle {
+    margin: 0;
+    font-size: var(--text-sm);
+    opacity: 0.9;
+  }
+
+  .grado-benefits {
+    list-style: none;
+    padding: var(--space-6);
+    margin: 0;
+  }
+
+  .grado-benefits li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-7);
+    position: relative;
+    color: var(--dark-gray);
+    font-size: var(--text-sm);
+  }
+
+  .grado-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+  }
+
+  /* Servicios Valoracion */
+  .servicios-valoracion {
+    margin: var(--space-8) 0;
+  }
+
+  .servicio-item {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .servicio-number {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    flex-shrink: 0;
+  }
+
+  .servicio-content h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .servicio-content p {
+    margin: 0;
+    font-size: var(--text-base);
+  }
+
+  /* Patologias Grid */
+  .patologias-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .patologias-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .patologias-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .patologia-category {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .patologia-category h3 {
+    color: var(--primary-green);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .patologia-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .patologia-category li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    position: relative;
+    color: var(--dark-gray);
+    font-size: var(--text-sm);
+  }
+
+  .patologia-category li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+  }
+
+  /* Comparison Box */
+  .comparison-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .comparison-box {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .comparison-item {
+    background: var(--light-gray);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .comparison-item h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+    text-align: center;
+  }
+
+  .comparison-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comparison-item li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    position: relative;
+    color: var(--dark-gray);
+  }
+
+  .comparison-item li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+  }
+
+  .note {
+    background: var(--light-blue);
+    padding: var(--space-4);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3,
+  .info-card h3 {
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .doc-list,
+  .plazos-list,
+  .benefits-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .doc-list li,
+  .plazos-list li,
+  .benefits-list li {
+    color: var(--dark-gray);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

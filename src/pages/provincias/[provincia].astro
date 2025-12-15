@@ -1,0 +1,175 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ProvinciaLayout from '@layouts/ProvinciaLayout.astro';
+import provinciasData from '@data/provincias.json';
+
+export async function getStaticPaths() {
+  const provinciasEntries = await getCollection('provincias');
+
+  console.log('Total provincias encontradas:', provinciasEntries.length);
+  console.log('Primeras 5 IDs:', provinciasEntries.slice(0, 5).map(e => e.id));
+
+  return provinciasEntries.map((entry) => {
+    // Remove .md extension from entry.id to get the slug
+    const slug = entry.id.replace(/\.md$/, '');
+
+    return {
+      params: { provincia: slug },
+      props: {
+        entry,
+        provinciaData: provinciasData.find(p => p.slug === slug),
+      },
+    };
+  });
+}
+
+type Props = {
+  entry: CollectionEntry<'provincias'>;
+  provinciaData: typeof provinciasData[0] | undefined;
+};
+
+const { entry, provinciaData } = Astro.props as Props;
+const { Content } = await entry.render();
+
+// Remove .md extension from entry.id for the slug
+const provinciaSlug = entry.id.replace(/\.md$/, '');
+
+const title = `Peritaje Médico en ${entry.data.nombre} | Valoración Discapacidad`;
+const description = entry.data.metaDescription;
+---
+
+<ProvinciaLayout
+  title={title}
+  description={description}
+  provincia={{
+    nombre: entry.data.nombre,
+    slug: provinciaSlug,
+    capital: entry.data.capital,
+    comunidad: entry.data.comunidad,
+    poblacion: entry.data.poblacion,
+  }}
+>
+  <Content />
+
+  <!-- Sección adicional: Ciudades de la provincia -->
+  {provinciaData && provinciaData.ciudades && provinciaData.ciudades.length > 0 && (
+    <section class="ciudades-section">
+      <h2>Cobertura en {entry.data.comunidad}</h2>
+      <p>Ofrecemos nuestros servicios de peritaje médico en las principales ciudades de {entry.data.nombre}:</p>
+      <ul class="ciudades-list">
+        {provinciaData.ciudades.map((ciudad: string) => (
+          <li>{ciudad}</li>
+        ))}
+      </ul>
+      <p class="mt-4">
+        Además, atendemos en todo el territorio de la provincia de {entry.data.nombre},
+        con posibilidad de consultas presenciales u online según tus necesidades.
+      </p>
+    </section>
+  )}
+
+  <!-- FAQ Local -->
+  <section class="faq-local">
+    <h2>Preguntas Frecuentes en {entry.data.nombre}</h2>
+
+    <details class="faq-item">
+      <summary>¿Dónde está el tribunal médico en {entry.data.nombre}?</summary>
+      <p>
+        El tribunal médico de valoración de discapacidad en {entry.data.nombre} se encuentra en {entry.data.capital}.
+        Nosotros te ayudamos a preparar toda la documentación necesaria antes de tu cita para maximizar
+        las posibilidades de éxito.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Cuánto tarda el proceso en {entry.data.nombre}?</summary>
+      <p>
+        El plazo legal es de 6 meses desde la presentación de la solicitud. En {entry.data.nombre},
+        el tiempo real suele variar entre 3 y 8 meses dependiendo de la carga de trabajo del tribunal.
+        Nuestro servicio de peritaje puede acelerar el proceso al aportar documentación completa y bien fundamentada.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Atienden en {entry.data.capital} de forma presencial?</summary>
+      <p>
+        Sí, ofrecemos atención tanto presencial como online en {entry.data.nombre}. Podemos desplazarnos
+        a {entry.data.capital} y otras localidades de la provincia según las necesidades del caso.
+        También realizamos consultas por videoconferencia para mayor comodidad.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Cuánto cuesta un peritaje médico en {entry.data.nombre}?</summary>
+      <p>
+        El coste del peritaje médico varía según la complejidad del caso. Ofrecemos una primera consulta
+        gratuita en {entry.data.nombre} donde analizamos tu situación y te proporcionamos un presupuesto
+        personalizado sin compromiso.
+      </p>
+    </details>
+  </section>
+</ProvinciaLayout>
+
+<style>
+  .ciudades-section {
+    background-color: var(--light-gray);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    margin: var(--space-12) 0;
+  }
+
+  .ciudades-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  .ciudades-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-3);
+    margin: var(--space-6) 0;
+    padding-left: var(--space-6);
+  }
+
+  .ciudades-list li {
+    color: var(--dark-gray);
+  }
+
+  .faq-local {
+    margin-top: var(--space-12);
+  }
+
+  .faq-local h2 {
+    color: var(--primary-blue);
+    margin-bottom: var(--space-8);
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    padding: var(--space-6);
+  }
+
+  .faq-item summary {
+    font-weight: var(--font-semibold);
+    color: var(--primary-blue);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: var(--space-4);
+    color: var(--medium-gray);
+    line-height: 1.7;
+  }
+
+  .mt-4 {
+    margin-top: var(--space-4);
+  }
+</style>

@@ -1,0 +1,522 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Qué es un peritaje médico?',
+    answer: 'Un peritaje médico es un informe elaborado por un profesional médico especializado que evalúa objetivamente el estado de salud de una persona y las limitaciones que presenta, fundamentando técnicamente el grado de discapacidad que le corresponde según el baremo oficial.',
+  },
+  {
+    question: '¿Cuándo necesito un peritaje médico?',
+    answer: 'Es recomendable cuando vas a solicitar el reconocimiento de discapacidad por primera vez, cuando te han denegado la solicitud y quieres recurrir, o cuando consideras que el grado reconocido es inferior al que te corresponde.',
+  },
+  {
+    question: '¿El informe pericial es vinculante?',
+    answer: 'No es vinculante para el tribunal médico oficial, pero sí es una prueba pericial de gran peso que debe ser valorada y tenida en cuenta en la resolución final.',
+  },
+  {
+    question: '¿Puedo presentar el informe pericial en cualquier momento del proceso?',
+    answer: 'Sí, puedes presentarlo junto con la solicitud inicial, durante el proceso de valoración, o al interponer un recurso contra una resolución desfavorable.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Peritaje Médico para Discapacidad | Informes Periciales Especializados"
+  description="Servicios profesionales de peritaje médico para valoración de discapacidad. Informes periciales elaborados por expertos. Primera consulta gratuita."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Peritaje Médico Especializado</h1>
+      <p class="hero-description">
+        Informes periciales médicos profesionales que respaldan tu solicitud de reconocimiento
+        o revisión del grado de discapacidad con fundamentación técnica rigurosa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Qué es el Peritaje Médico?</h2>
+          <p>
+            El peritaje médico es un documento técnico elaborado por profesionales médicos especializados
+            que evalúa de forma objetiva e independiente tu estado de salud, las patologías que presentas
+            y las limitaciones funcionales que estas te ocasionan en tu vida diaria.
+          </p>
+          <p>
+            Este informe se elabora siguiendo el mismo baremo oficial que utilizan los tribunales médicos
+            de las administraciones públicas, proporcionando una fundamentación sólida y técnica que
+            respalda tu solicitud de reconocimiento o revisión del grado de discapacidad.
+          </p>
+
+          <h2>¿Qué Incluye Nuestro Peritaje Médico?</h2>
+          <ul class="features-list">
+            <li>
+              <strong>Evaluación exhaustiva</strong> de tu historial clínico completo
+            </li>
+            <li>
+              <strong>Análisis de todas las patologías</strong> que presentas y su impacto
+            </li>
+            <li>
+              <strong>Valoración de limitaciones funcionales</strong> según el baremo oficial
+            </li>
+            <li>
+              <strong>Documentación de factores sociales</strong> complementarios
+            </li>
+            <li>
+              <strong>Cálculo fundamentado</strong> del porcentaje de discapacidad estimado
+            </li>
+            <li>
+              <strong>Recomendaciones</strong> sobre documentación adicional necesaria
+            </li>
+            <li>
+              <strong>Asesoramiento</strong> para la comparecencia ante el tribunal médico
+            </li>
+          </ul>
+
+          <h2>Ventajas del Peritaje Médico</h2>
+          <div class="advantages">
+            <div class="advantage-item">
+              <div class="advantage-icon">📋</div>
+              <div>
+                <h3>Fundamentación Técnica</h3>
+                <p>
+                  Informe elaborado con rigor técnico y fundamentación médica sólida que respalda
+                  tu caso ante el tribunal oficial.
+                </p>
+              </div>
+            </div>
+
+            <div class="advantage-item">
+              <div class="advantage-icon">⚖️</div>
+              <div>
+                <h3>Objetividad e Independencia</h3>
+                <p>
+                  Evaluación realizada por profesionales independientes sin conflicto de intereses,
+                  basada exclusivamente en criterios médicos.
+                </p>
+              </div>
+            </div>
+
+            <div class="advantage-item">
+              <div class="advantage-icon">📈</div>
+              <div>
+                <h3>Aumenta Probabilidades de Éxito</h3>
+                <p>
+                  Contar con un informe pericial de calidad incrementa significativamente las
+                  posibilidades de obtener una resolución favorable.
+                </p>
+              </div>
+            </div>
+
+            <div class="advantage-item">
+              <div class="advantage-icon">🎯</div>
+              <div>
+                <h3>Orientación Estratégica</h3>
+                <p>
+                  Te ayudamos a identificar qué aspectos reforzar y qué documentación adicional
+                  puede fortalecer tu caso.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>¿Cuándo Necesitas un Peritaje Médico?</h2>
+          <div class="scenarios">
+            <div class="scenario">
+              <h3>Primera Solicitud</h3>
+              <p>
+                Cuando vas a solicitar el reconocimiento de discapacidad por primera vez y quieres
+                asegurar que tu caso está bien fundamentado desde el principio.
+              </p>
+            </div>
+
+            <div class="scenario">
+              <h3>Solicitud Denegada</h3>
+              <p>
+                Si tu solicitud ha sido denegada y consideras que la decisión no es acertada,
+                un peritaje médico es fundamental para interponer un recurso con garantías.
+              </p>
+            </div>
+
+            <div class="scenario">
+              <h3>Grado Insuficiente</h3>
+              <p>
+                Cuando te han reconocido un porcentaje inferior al que consideras que te corresponde
+                por tus limitaciones reales.
+              </p>
+            </div>
+
+            <div class="scenario">
+              <h3>Empeoramiento</h3>
+              <p>
+                Si tu situación médica ha empeorado desde el último reconocimiento y quieres
+                solicitar una revisión por agravamiento.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Necesitas un Peritaje Médico?</h3>
+            <p>Solicita tu consulta gratuita y analizaremos tu caso sin compromiso.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="info-card">
+            <h3>Nuestro Proceso</h3>
+            <ol class="process-list">
+              <li>Consulta inicial gratuita</li>
+              <li>Análisis de documentación</li>
+              <li>Elaboración del informe</li>
+              <li>Entrega y explicación</li>
+              <li>Seguimiento del caso</li>
+            </ol>
+          </div>
+
+          <div class="info-card">
+            <h3>Garantías</h3>
+            <ul class="guarantees-list">
+              <li>✓ Profesionales colegiados</li>
+              <li>✓ Informes rigurosos</li>
+              <li>✓ Confidencialidad total</li>
+              <li>✓ Plazos cumplidos</li>
+              <li>✓ Atención personalizada</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Listo para Iniciar Tu Peritaje Médico?</h2>
+      <p>Contacta con nosotros y comienza tu proceso hoy mismo</p>
+      <a href="/contacto" class="cta-button-large">Solicitar Presupuesto Gratuito</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Content Section */
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+  }
+
+  .features-list li {
+    padding: var(--space-3) 0;
+    padding-left: var(--space-8);
+    position: relative;
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  .features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+    font-size: var(--text-xl);
+  }
+
+  .advantages {
+    margin: var(--space-8) 0;
+  }
+
+  .advantage-item {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .advantage-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .advantage-item h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .advantage-item p {
+    margin: 0;
+  }
+
+  .scenarios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .scenarios {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .scenario {
+    padding: var(--space-6);
+    background: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .scenario h3 {
+    color: var(--primary-green);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .scenario p {
+    margin: 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3,
+  .info-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .process-list,
+  .guarantees-list {
+    margin: 0;
+    padding-left: var(--space-5);
+  }
+
+  .process-list li,
+  .guarantees-list li {
+    color: var(--dark-gray);
+    margin-bottom: var(--space-2);
+    line-height: 1.6;
+  }
+
+  .guarantees-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

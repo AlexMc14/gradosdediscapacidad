@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "María G.",
+    "ubicacion": "Madrid",
+    "texto": "Gracias al equipo conseguí el reconocimiento del 65% tras ser denegado inicialmente. Su informe pericial fue clave en el recurso. Profesionales cercanos y muy competentes.",
+    "rating": 5,
+    "servicio": "Recursos y Reclamaciones"
+  },
+  {
+    "id": 2,
+    "nombre": "Juan Carlos R.",
+    "ubicacion": "Barcelona",
+    "texto": "Profesionales muy cercanos que me guiaron en todo el proceso de solicitud. Explicaron cada paso con claridad y el resultado fue exitoso. Recomendable 100%.",
+    "rating": 5,
+    "servicio": "Valoración de Discapacidad"
+  },
+  {
+    "id": 3,
+    "nombre": "Laura M.",
+    "ubicacion": "Valencia",
+    "texto": "Recurrimos la valoración y conseguimos pasar del 33% al 65%. El informe pericial fue muy completo y bien fundamentado. Excelente servicio y trato humano.",
+    "rating": 5,
+    "servicio": "Revisión de Grado"
+  },
+  {
+    "id": 4,
+    "nombre": "Antonio F.",
+    "ubicacion": "Sevilla",
+    "texto": "Tras años con fibromialgia, me ayudaron a obtener el reconocimiento del 33%. El proceso fue rápido y eficiente. Muy agradecido por su profesionalidad.",
+    "rating": 5,
+    "servicio": "Peritaje Médico"
+  },
+  {
+    "id": 5,
+    "nombre": "Carmen L.",
+    "ubicacion": "Málaga",
+    "texto": "Excelente atención desde el primer momento. Me asesoraron sobre toda la documentación necesaria y el informe médico fue impecable. Conseguimos el 33% sin problemas.",
+    "rating": 5,
+    "servicio": "Valoración de Discapacidad"
+  },
+  {
+    "id": 6,
+    "nombre": "Roberto S.",
+    "ubicacion": "Bilbao",
+    "texto": "Muy satisfecho con el resultado. El peritaje para la incapacidad permanente fue determinante. Gran profesionalidad y conocimiento de la normativa vigente.",
+    "rating": 5,
+    "servicio": "Incapacidad Laboral"
+  },
+  {
+    "id": 7,
+    "nombre": "Isabel P.",
+    "ubicacion": "Zaragoza",
+    "texto": "Después de una denegación inicial, su informe pericial logró que me reconocieran el grado de discapacidad. Muy contentos con el servicio recibido.",
+    "rating": 5,
+    "servicio": "Recursos y Reclamaciones"
+  }
+]

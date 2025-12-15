@@ -1,0 +1,966 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Qué validez tiene un informe pericial privado?',
+    answer: 'Un informe pericial elaborado por un médico colegiado tiene plena validez probatoria. Aunque no es vinculante para el tribunal oficial, debe ser valorado y tenido en cuenta en la resolución. En procesos judiciales, es considerado prueba pericial técnica.',
+  },
+  {
+    question: '¿Cuánto tiempo se tarda en elaborar un informe pericial?',
+    answer: 'Normalmente entre 7 y 15 días laborables, dependiendo de la complejidad del caso y la cantidad de documentación médica que haya que analizar. En casos urgentes (plazos de recurso próximos) podemos acelerar el proceso.',
+  },
+  {
+    question: '¿El informe pericial garantiza que me reconozcan la discapacidad?',
+    answer: 'No hay garantías absolutas, ya que la decisión final la toma el tribunal oficial. Sin embargo, un informe pericial bien fundament ado aumenta significativamente las probabilidades de éxito, especialmente en recursos y reclamaciones.',
+  },
+  {
+    question: '¿Puedo usar el informe pericial en varios procedimientos?',
+    answer: 'Sí, el mismo informe puede servir para la solicitud inicial, para recursos administrativos, para procesos judiciales e incluso para tramitaciones de incapacidad laboral si las patologías son las mismas.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Informes Periciales Médicos | Discapacidad e Incapacidad"
+  description="Informes periciales médicos profesionales para discapacidad e incapacidad laboral. Elaborados por expertos colegiados. Aumenta tus probabilidades de éxito."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Informes Periciales Médicos</h1>
+      <p class="hero-description">
+        Informes periciales profesionales elaborados por médicos colegiados especializados
+        que fundamentan técnicamente tu caso ante tribunales y administraciones.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Qué es un Informe Pericial Médico?</h2>
+          <p>
+            Un informe pericial médico es un documento técnico elaborado por un profesional
+            médico especializado que evalúa objetivamente el estado de salud de una persona,
+            sus limitaciones funcionales y el grado de afectación que presentan sus patologías.
+          </p>
+          <p>
+            Este informe sirve como prueba pericial en procesos administrativos (valoración
+            de discapacidad, incapacidad laboral) y judiciales, aportando fundamentación
+            médico-legal profesional a tu caso.
+          </p>
+
+          <h2>¿Para Qué Sirve un Informe Pericial?</h2>
+
+          <div class="usos-informe">
+            <div class="uso-card">
+              <div class="uso-icon">📋</div>
+              <h3>Solicitud de Discapacidad</h3>
+              <p>
+                Acompaña tu solicitud inicial con un informe que fundamenta el porcentaje
+                que te corresponde, aumentando las probabilidades de éxito desde el principio.
+              </p>
+            </div>
+
+            <div class="uso-card">
+              <div class="uso-icon">⚖️</div>
+              <h3>Recursos y Reclamaciones</h3>
+              <p>
+                Elemento fundamental para recurrir resoluciones desfavorables, rebatiendo
+                técnicamente la valoración del tribunal oficial.
+              </p>
+            </div>
+
+            <div class="uso-card">
+              <div class="uso-icon">🔄</div>
+              <h3>Revisión de Grado</h3>
+              <p>
+                Acredita el empeoramiento de tu situación o la aparición de nuevas patologías
+                para solicitar aumento del porcentaje reconocido.
+              </p>
+            </div>
+
+            <div class="uso-card">
+              <div class="uso-icon">💼</div>
+              <h3>Incapacidad Laboral</h3>
+              <p>
+                Fundament a ante el INSS o la Mutua las limitaciones que te impiden trabajar,
+                especialmente útil en incapacidades por enfermedad mental o dolor crónico.
+              </p>
+            </div>
+
+            <div class="uso-card">
+              <div class="uso-icon">🏛️</div>
+              <h3>Procesos Judiciales</h3>
+              <p>
+                Prueba pericial técnica en procedimientos contencioso-administrativos o
+                laborales, con validez plena como elemento probatorio.
+              </p>
+            </div>
+
+            <div class="uso-card">
+              <div class="uso-icon">📄</div>
+              <h3>Segunda Opinión</h3>
+              <p>
+                Evaluación objetiva de tu situación para saber si la valoración oficial
+                fue correcta o si tienes fundamento para reclamar.
+              </p>
+            </div>
+          </div>
+
+          <h2>¿Qué Incluye Nuestro Informe Pericial?</h2>
+
+          <div class="contenido-informe">
+            <div class="seccion-informe">
+              <h3>1. Antecedentes Personales y Médicos</h3>
+              <ul>
+                <li>Datos de identificación del peritado</li>
+                <li>Historia clínica completa y cronológica</li>
+                <li>Tratamientos recibidos y actuales</li>
+                <li>Intervenciones quirúrgicas si las hubiere</li>
+                <li>Evolución de las patologías</li>
+              </ul>
+            </div>
+
+            <div class="seccion-informe">
+              <h3>2. Exploración y Valoración Clínica</h3>
+              <ul>
+                <li>Análisis de informes médicos aportados</li>
+                <li>Revisión de pruebas diagnósticas (analíticas, TAC, RM, etc.)</li>
+                <li>Evaluación de informes de especialistas</li>
+                <li>Valoración de la documentación clínica completa</li>
+              </ul>
+            </div>
+
+            <div class="seccion-informe">
+              <h3>3. Diagnósticos Médicos</h3>
+              <ul>
+                <li>Relación completa de patologías diagnosticadas</li>
+                <li>Clasificación según CIE-10 (Clasificación Internacional de Enfermedades)</li>
+                <li>Pronóstico de cada patología</li>
+                <li>Carácter evolutivo o estable</li>
+              </ul>
+            </div>
+
+            <div class="seccion-informe">
+              <h3>4. Limitaciones Funcionales</h3>
+              <ul>
+                <li>Análisis detallado de limitaciones en actividades de la vida diaria</li>
+                <li>Afectación de la movilidad y desplazamientos</li>
+                <li>Limitaciones cognitivas si las hubiere</li>
+                <li>Capacidad de autocuidado y autonomía</li>
+                <li>Impacto en relaciones sociales y laborales</li>
+              </ul>
+            </div>
+
+            <div class="seccion-informe">
+              <h3>5. Aplicación del Baremo Oficial</h3>
+              <ul>
+                <li>Valoración de cada patología según las tablas del RD 1971/1999</li>
+                <li>Cálculo del porcentaje correspondiente a cada una</li>
+                <li>Aplicación de fórmulas de combinación de deficiencias</li>
+                <li>Valoración de factores sociales complementarios</li>
+                <li>Porcentaje total fundamentado</li>
+              </ul>
+            </div>
+
+            <div class="seccion-informe">
+              <h3>6. Conclusiones y Propuesta</h3>
+              <ul>
+                <li>Grado de discapacidad estimado técnicamente</li>
+                <li>Fundamentación del porcentaje propuesto</li>
+                <li>Si procede, reconocimiento de movilidad reducida</li>
+                <li>Recomendaciones sobre documentación adicional</li>
+                <li>Firma y sello del perito médico colegiado</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Ventajas de Nuestros Informes</h2>
+
+          <div class="ventajas">
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Elaborados por Médicos Colegiados</h3>
+                <p>
+                  Profesionales médicos titulados y colegiados con experiencia en valoración
+                  de discapacidad e incapacidad laboral.
+                </p>
+              </div>
+            </div>
+
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Fundamentación Técnica Rigurosa</h3>
+                <p>
+                  Basados en evidencia médica, baremo oficial vigente y jurisprudencia
+                  consolidada en la materia.
+                </p>
+              </div>
+            </div>
+
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Objetividad e Independencia</h3>
+                <p>
+                  Valoración imparcial basada exclusivamente en criterios médicos y legales,
+                  sin conflicto de intereses.
+                </p>
+              </div>
+            </div>
+
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Validez Legal Plena</h3>
+                <p>
+                  Documentos con plena validez probatoria en procedimientos administrativos
+                  y judiciales.
+                </p>
+              </div>
+            </div>
+
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Lenguaje Técnico Apropiado</h3>
+                <p>
+                  Redactados en términos médico-legales adecuados para ser comprendidos
+                  por tribunales y jueces.
+                </p>
+              </div>
+            </div>
+
+            <div class="ventaja">
+              <span class="ventaja-icon">✅</span>
+              <div>
+                <h3>Personalización Total</h3>
+                <p>
+                  Cada informe se elabora específicamente para tu caso, no usamos plantillas
+                  genéricas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Proceso de Elaboración</h2>
+
+          <div class="proceso-elaboracion">
+            <div class="paso">
+              <div class="paso-numero">1</div>
+              <div class="paso-detalle">
+                <h3>Consulta Inicial</h3>
+                <p>
+                  Entrevista personal (presencial u online) donde analizamos tu caso,
+                  tus patologías y la documentación médica de la que dispones.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-numero">2</div>
+              <div class="paso-detalle">
+                <h3>Revisión Documental</h3>
+                <p>
+                  Estudio exhaustivo de toda tu documentación médica: informes de especialistas,
+                  pruebas diagnósticas, tratamientos, evolución clínica.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-numero">3</div>
+              <div class="paso-detalle">
+                <h3>Análisis Médico-Legal</h3>
+                <p>
+                  Valoración de tus patologías según el baremo oficial, cálculo de porcentajes,
+                  aplicación de factores sociales y fundamentación técnica.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-numero">4</div>
+              <div class="paso-detalle">
+                <h3>Redacción del Informe</h3>
+                <p>
+                  Elaboración del documento pericial completo con toda la fundamentación
+                  médica y legal correspondiente.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso">
+              <div class="paso-numero">5</div>
+              <div class="paso-detalle">
+                <h3>Entrega y Explicación</h3>
+                <p>
+                  Te entregamos el informe y te explicamos sus conclusiones, cómo utilizarlo
+                  y qué pasos seguir en tu procedimiento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>¿Cuándo Necesitas un Informe Pericial?</h2>
+
+          <div class="cuando-necesitas">
+            <div class="necesidad">
+              <h3>✓ Antes de Solicitar la Discapacidad</h3>
+              <p>
+                Para saber qué porcentaje puedes conseguir realmente y preparar adecuadamente
+                tu solicitud desde el principio.
+              </p>
+            </div>
+
+            <div class="necesidad">
+              <h3>✓ Te Han Denegado</h3>
+              <p>
+                El informe pericial es fundamental para fundamentar un recurso con garantías
+                de éxito.
+              </p>
+            </div>
+
+            <div class="necesidad">
+              <h3>✓ Grado Insuficiente</h3>
+              <p>
+                Cuando el porcentaje reconocido no refleja tus limitaciones reales según
+                el baremo oficial.
+              </p>
+            </div>
+
+            <div class="necesidad">
+              <h3>✓ Incapacidad Laboral</h3>
+              <p>
+                Para acreditar ante el INSS que tus limitaciones impiden trabajar, especialmente
+                en enfermedades mentales y dolor crónico.
+              </p>
+            </div>
+
+            <div class="necesidad">
+              <h3>✓ Proceso Judicial</h3>
+              <p>
+                Como prueba pericial en demandas contencioso-administrativas o sociales.
+              </p>
+            </div>
+
+            <div class="necesidad">
+              <h3>✓ Segunda Opinión</h3>
+              <p>
+                Para obtener una valoración objetiva de un profesional independiente sobre
+                tu caso.
+              </p>
+            </div>
+          </div>
+
+          <h2>Diferencias con un Informe Médico Normal</h2>
+
+          <table class="tabla-diferencias">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Informe Médico Clínico</th>
+                <th>Informe Pericial Médico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Objetivo</strong></td>
+                <td>Diagnóstico y tratamiento</td>
+                <td>Valoración legal de limitaciones</td>
+              </tr>
+              <tr>
+                <td><strong>Contenido</strong></td>
+                <td>Patología y plan terapéutico</td>
+                <td>Aplicación del baremo oficial</td>
+              </tr>
+              <tr>
+                <td><strong>Destinatario</strong></td>
+                <td>Paciente / Otros médicos</td>
+                <td>Tribunales / Administración / Jueces</td>
+              </tr>
+              <tr>
+                <td><strong>Lenguaje</strong></td>
+                <td>Médico clínico</td>
+                <td>Médico-legal / Forense</td>
+              </tr>
+              <tr>
+                <td><strong>Finalidad</strong></td>
+                <td>Asistencial</td>
+                <td>Probatoria / Legal</td>
+              </tr>
+              <tr>
+                <td><strong>Fundamentación</strong></td>
+                <td>Clínica</td>
+                <td>Médica + Legal + Baremo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Necesitas un Informe?</h3>
+            <p>Consulta gratuita para analizar tu caso y determinar si te conviene un informe pericial.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="precio-card">
+            <h3>💰 Precio</h3>
+            <p class="precio-desc">
+              El coste varía según la complejidad del caso y número de patologías a valorar.
+            </p>
+            <p class="precio-desde">Desde <strong>350€</strong></p>
+            <ul class="incluye-list">
+              <li>✓ Consulta inicial</li>
+              <li>✓ Análisis completo documentación</li>
+              <li>✓ Informe pericial completo</li>
+              <li>✓ Explicación detallada</li>
+              <li>✓ Asesoramiento uso</li>
+            </ul>
+            <p class="nota-precio">Presupuesto personalizado sin compromiso</p>
+          </div>
+
+          <div class="info-card">
+            <h3>⏱️ Plazos</h3>
+            <ul>
+              <li><strong>Normal:</strong> 7-15 días</li>
+              <li><strong>Urgente:</strong> 3-5 días</li>
+              <li><strong>Muy urgente:</strong> 24-48h</li>
+            </ul>
+            <p class="nota-small">*Según disponibilidad y complejidad</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Documentación Necesaria</h3>
+            <ul class="doc-list">
+              <li>Informes médicos actualizados</li>
+              <li>Pruebas diagnósticas (TAC, RM, analíticas)</li>
+              <li>Informes de especialistas</li>
+              <li>Tratamientos actuales</li>
+              <li>Historial clínico</li>
+              <li>Resoluciones previas (si hay)</li>
+            </ul>
+          </div>
+
+          <div class="info-card garantia-card">
+            <h3>🛡️ Garantía</h3>
+            <p>
+              Si el informe contiene errores técnicos o no se ajusta a lo acordado,
+              lo revisamos y corregimos sin coste adicional.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Necesitas un Informe Pericial Profesional?</h2>
+      <p>Consulta gratuita para evaluar tu caso y proporcionarte presupuesto sin compromiso</p>
+      <a href="/contacto" class="cta-button-large">Solicitar Presupuesto Gratis</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-6);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Usos Informe */
+  .usos-informe {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  @media (min-width: 768px) {
+    .usos-informe {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .usos-informe {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .uso-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    text-align: center;
+  }
+
+  .uso-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .uso-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .uso-card p {
+    margin: 0;
+    text-align: left;
+    font-size: var(--text-sm);
+  }
+
+  /* Contenido Informe */
+  .contenido-informe {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .seccion-informe {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .seccion-informe h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .seccion-informe ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .seccion-informe li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    position: relative;
+    color: var(--dark-gray);
+  }
+
+  .seccion-informe li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+  }
+
+  /* Ventajas */
+  .ventajas {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+  }
+
+  .ventaja {
+    display: flex;
+    gap: var(--space-4);
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .ventaja-icon {
+    font-size: 2rem;
+    color: var(--primary-green);
+    flex-shrink: 0;
+  }
+
+  .ventaja h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .ventaja p {
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  /* Proceso Elaboracion */
+  .proceso-elaboracion {
+    margin: var(--space-8) 0;
+  }
+
+  .paso {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .paso-numero {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    flex-shrink: 0;
+  }
+
+  .paso-detalle h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .paso-detalle p {
+    margin: 0;
+  }
+
+  /* Cuando Necesitas */
+  .cuando-necesitas {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+  }
+
+  .necesidad {
+    background: var(--light-green);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .necesidad h3 {
+    color: var(--primary-green);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .necesidad p {
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  /* Tabla Diferencias */
+  .tabla-diferencias {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-8) 0;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .tabla-diferencias thead {
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+
+  .tabla-diferencias th,
+  .tabla-diferencias td {
+    padding: var(--space-4);
+    text-align: left;
+    border: 1px solid var(--border-gray);
+  }
+
+  .tabla-diferencias tbody tr:nth-child(even) {
+    background: var(--light-gray);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card,
+  .precio-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Precio Card */
+  .precio-card {
+    background: var(--light-green);
+    border: 2px solid var(--primary-green);
+  }
+
+  .precio-card h3 {
+    color: var(--primary-green);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .precio-desc {
+    font-size: var(--text-sm);
+    color: var(--dark-gray);
+    margin-bottom: var(--space-4);
+  }
+
+  .precio-desde {
+    text-align: center;
+    font-size: var(--text-2xl);
+    color: var(--primary-green);
+    margin: var(--space-4) 0;
+  }
+
+  .precio-desde strong {
+    font-size: var(--text-4xl);
+  }
+
+  .incluye-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+  }
+
+  .incluye-list li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+  }
+
+  .nota-precio {
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-top: var(--space-4);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--dark-gray);
+  }
+
+  .nota-small {
+    font-size: var(--text-xs);
+    color: var(--medium-gray);
+    font-style: italic;
+    margin-top: var(--space-2);
+  }
+
+  .garantia-card {
+    background: var(--light-blue);
+    border: 2px solid var(--primary-blue);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>

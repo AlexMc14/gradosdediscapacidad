@@ -1,0 +1,426 @@
+---
+import Button from '@components/ui/Button.astro';
+import provinciasData from '@data/provincias.json';
+
+const provinciasOrdenadas = [...provinciasData].sort((a, b) =>
+  a.nombre.localeCompare(b.nombre)
+);
+---
+
+<div class="contact-form-wrapper">
+  <form id="contactForm" class="contact-form">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="nombre">Nombre completo <span class="required">*</span></label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          required
+          minlength="2"
+          maxlength="100"
+          placeholder="Ej: Juan García López"
+        />
+        <span class="error-message" id="nombre-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="tu@email.com"
+        />
+        <span class="error-message" id="email-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Teléfono <span class="required">*</span></label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          required
+          pattern="[0-9]{9}"
+          placeholder="600123456"
+          maxlength="9"
+        />
+        <span class="error-message" id="telefono-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="provincia">Provincia <span class="required">*</span></label>
+        <select id="provincia" name="provincia" required>
+          <option value="">Selecciona tu provincia</option>
+          {provinciasOrdenadas.map((provincia) => (
+            <option value={provincia.nombre}>{provincia.nombre}</option>
+          ))}
+        </select>
+        <span class="error-message" id="provincia-error"></span>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="tipoConsulta">Tipo de consulta</label>
+        <select id="tipoConsulta" name="tipoConsulta">
+          <option value="">Selecciona un tipo (opcional)</option>
+          <option value="peritaje-medico">Peritaje Médico</option>
+          <option value="valoracion-discapacidad">Valoración de Discapacidad</option>
+          <option value="revision-grado">Revisión de Grado</option>
+          <option value="recurso-reclamacion">Recurso y Reclamación</option>
+          <option value="incapacidad-laboral">Incapacidad Laboral</option>
+          <option value="segunda-opinion">Segunda Opinión Médica</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="mensaje">Mensaje <span class="required">*</span></label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          required
+          minlength="10"
+          maxlength="1000"
+          rows="5"
+          placeholder="Cuéntanos brevemente tu situación y cómo podemos ayudarte..."
+        ></textarea>
+        <span class="error-message" id="mensaje-error"></span>
+      </div>
+
+      <div class="form-group full-width">
+        <label class="checkbox-label">
+          <input
+            type="checkbox"
+            id="rgpd"
+            name="rgpd"
+            required
+          />
+          <span>
+            He leído y acepto la
+            <a href="/legal/privacidad" target="_blank">Política de Privacidad</a>
+            y el tratamiento de mis datos personales <span class="required">*</span>
+          </span>
+        </label>
+        <span class="error-message" id="rgpd-error"></span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <Button type="submit" variant="primary" size="lg">
+        Solicitar Presupuesto Gratuito
+      </Button>
+    </div>
+
+    <div class="form-message" id="formMessage"></div>
+  </form>
+</div>
+
+<style>
+  .contact-form-wrapper {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .form-group label {
+    font-weight: var(--font-semibold);
+    color: var(--dark-gray);
+    font-size: var(--text-sm);
+  }
+
+  .required {
+    color: var(--error);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--space-3);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    background-color: var(--white);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+  }
+
+  .form-group input:invalid:not(:placeholder-shown),
+  .form-group select:invalid:not(:placeholder-shown),
+  .form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--error);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    cursor: pointer;
+    font-size: var(--text-sm);
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    margin-top: 2px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .checkbox-label a {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .checkbox-label a:hover {
+    color: #047857;
+  }
+
+  .error-message {
+    display: none;
+    color: var(--error);
+    font-size: var(--text-sm);
+    margin-top: var(--space-1);
+  }
+
+  .error-message.visible {
+    display: block;
+  }
+
+  .form-actions {
+    margin-top: var(--space-4);
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-message {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: var(--font-medium);
+    display: none;
+  }
+
+  .form-message.visible {
+    display: block;
+  }
+
+  .form-message.success {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+  }
+
+  .form-message.error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #EF4444;
+  }
+
+  .form-message.loading {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const formMessage = document.getElementById('formMessage') as HTMLDivElement;
+
+  function showError(fieldId: string, message: string) {
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.add('visible');
+    }
+  }
+
+  function clearError(fieldId: string) {
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    if (errorElement) {
+      errorElement.textContent = '';
+      errorElement.classList.remove('visible');
+    }
+  }
+
+  function clearAllErrors() {
+    const errorElements = form.querySelectorAll('.error-message');
+    errorElements.forEach(el => {
+      el.textContent = '';
+      el.classList.remove('visible');
+    });
+  }
+
+  function showFormMessage(message: string, type: 'success' | 'error' | 'loading') {
+    formMessage.textContent = message;
+    formMessage.className = 'form-message visible ' + type;
+  }
+
+  function hideFormMessage() {
+    formMessage.className = 'form-message';
+  }
+
+  function validateSpanishPhone(phone: string): boolean {
+    const cleanPhone = phone.replace(/\s/g, '');
+    return /^[6-9][0-9]{8}$/.test(cleanPhone);
+  }
+
+  function validateEmail(email: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateForm(): boolean {
+    clearAllErrors();
+    let isValid = true;
+
+    const nombre = (document.getElementById('nombre') as HTMLInputElement).value.trim();
+    const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+    const telefono = (document.getElementById('telefono') as HTMLInputElement).value.trim();
+    const provincia = (document.getElementById('provincia') as HTMLSelectElement).value;
+    const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement).value.trim();
+    const rgpd = (document.getElementById('rgpd') as HTMLInputElement).checked;
+
+    if (!nombre || nombre.length < 2) {
+      showError('nombre', 'Por favor, introduce tu nombre completo (mínimo 2 caracteres)');
+      isValid = false;
+    }
+
+    if (!email || !validateEmail(email)) {
+      showError('email', 'Por favor, introduce un email válido');
+      isValid = false;
+    }
+
+    if (!telefono || !validateSpanishPhone(telefono)) {
+      showError('telefono', 'Por favor, introduce un teléfono español válido (9 dígitos)');
+      isValid = false;
+    }
+
+    if (!provincia) {
+      showError('provincia', 'Por favor, selecciona tu provincia');
+      isValid = false;
+    }
+
+    if (!mensaje || mensaje.length < 10) {
+      showError('mensaje', 'Por favor, escribe un mensaje (mínimo 10 caracteres)');
+      isValid = false;
+    }
+
+    if (!rgpd) {
+      showError('rgpd', 'Debes aceptar la política de privacidad para continuar');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      showFormMessage('Por favor, corrige los errores en el formulario', 'error');
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitButton.disabled = true;
+
+    showFormMessage('Enviando tu consulta...', 'loading');
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        showFormMessage(
+          '¡Gracias por tu consulta! Nos pondremos en contacto contigo en breve.',
+          'success'
+        );
+        form.reset();
+
+        // Track conversion (Google Analytics)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submission', {
+            'event_category': 'Contact',
+            'event_label': 'Contact Form'
+          });
+        }
+      } else {
+        showFormMessage(
+          result.message || 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+          'error'
+        );
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      showFormMessage(
+        'Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.',
+        'error'
+      );
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+
+  // Clear errors on input
+  const inputs = form.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+    input.addEventListener('input', () => {
+      const fieldId = input.id;
+      clearError(fieldId);
+      hideFormMessage();
+    });
+  });
+</script>

@@ -1,0 +1,921 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { generateFAQSchema } from '@lib/schema-generators';
+import SchemaOrg from '@components/seo/SchemaOrg.astro';
+
+const faqData = [
+  {
+    question: '¿Cuándo puedo solicitar una revisión de grado?',
+    answer: 'Puedes solicitarla cuando tu situación médica haya empeorado significativamente desde el último reconocimiento, o cuando se cumpla la fecha de revisión establecida en tu certificado si era temporal.',
+  },
+  {
+    question: '¿Puedo perder el grado de discapacidad en una revisión?',
+    answer: 'Sí, si la revisión determina que ha habido mejoría. Por eso es importante contar con informes médicos actualizados que acrediten que las limitaciones persisten o han empeorado. Si es revisión voluntaria y empeoran el grado, puedes recurrir.',
+  },
+  {
+    question: '¿Cuánto tarda el proceso de revisión?',
+    answer: 'El plazo es el mismo que para una solicitud inicial: máximo 6 meses. Durante este tiempo, mantienes el grado anterior reconocido hasta que haya resolución firme.',
+  },
+  {
+    question: '¿Me citan al tribunal en la revisión?',
+    answer: 'Normalmente sí, salvo que se trate de una revisión documental por cambio normativo. Es importante acudir con toda la documentación médica actualizada que acredite tu situación actual.',
+  },
+];
+
+const faqSchema = generateFAQSchema({ questions: faqData });
+---
+
+<PageLayout
+  title="Revisión de Grado de Discapacidad | Aumenta tu Porcentaje"
+  description="¿Tu situación ha empeorado? Te ayudamos con la revisión del grado de discapacidad para aumentar tu porcentaje. Informe pericial especializado."
+>
+  <SchemaOrg schema={faqSchema} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Revisión del Grado de Discapacidad</h1>
+      <p class="hero-description">
+        Si tu situación médica ha empeorado o consideras que el porcentaje reconocido no refleja
+        tus limitaciones reales, te ayudamos a conseguir la revisión y el grado que te corresponde.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>¿Qué es la Revisión del Grado?</h2>
+          <p>
+            La revisión del grado de discapacidad es el procedimiento mediante el cual puedes
+            solicitar una nueva valoración de tu situación cuando esta ha cambiado respecto
+            al momento del último reconocimiento.
+          </p>
+          <p>
+            Existen dos tipos de revisiones: la obligatoria (cuando el certificado tiene fecha
+            de caducidad establecida) y la voluntaria (cuando tú la solicitas por empeoramiento
+            de tu estado o aparición de nuevas patologías).
+          </p>
+
+          <h2>Tipos de Revisión</h2>
+
+          <div class="tipos-revision">
+            <div class="tipo-card">
+              <div class="tipo-header agravamiento">
+                <h3>📈 Revisión por Agravamiento</h3>
+              </div>
+              <div class="tipo-content">
+                <p class="tipo-desc">
+                  La solicitas tú cuando tu situación médica ha empeorado significativamente
+                  desde el último reconocimiento.
+                </p>
+                <h4>Cuándo solicitarla:</h4>
+                <ul>
+                  <li>Empeoramiento de patologías existentes</li>
+                  <li>Aparición de nuevas enfermedades</li>
+                  <li>Aumento de limitaciones funcionales</li>
+                  <li>Mayor dependencia en actividades diarias</li>
+                  <li>Complicaciones de tratamientos</li>
+                </ul>
+                <p class="tip">
+                  <strong>💡 Consejo:</strong> Espera a tener documentación médica sólida
+                  que acredite el empeoramiento. No solicites revisión sin informes actualizados.
+                </p>
+              </div>
+            </div>
+
+            <div class="tipo-card">
+              <div class="tipo-header obligatoria">
+                <h3>📅 Revisión Obligatoria</h3>
+              </div>
+              <div class="tipo-content">
+                <p class="tipo-desc">
+                  El tribunal fijó una fecha de revisión porque consideró que tu situación
+                  podría evolucionar (mejorar o empeorar).
+                </p>
+                <h4>Características:</h4>
+                <ul>
+                  <li>Figura en tu certificado la fecha de revisión</li>
+                  <li>Te citarán automáticamente (o puedes adelantarla)</li>
+                  <li>Pueden aumentar, mantener o reducir el grado</li>
+                  <li>Común en niños, tratamientos oncológicos, rehabilitación</li>
+                </ul>
+                <p class="tip">
+                  <strong>⚠️ Importante:</strong> Prepara bien esta revisión con informes
+                  actualizados. Si no acreditas que persisten las limitaciones, pueden bajar tu grado.
+                </p>
+              </div>
+            </div>
+
+            <div class="tipo-card">
+              <div class="tipo-header mejoria">
+                <h3>📉 Revisión por Mejoría</h3>
+              </div>
+              <div class="tipo-content">
+                <p class="tipo-desc">
+                  La inicia la administración si tienen indicios de que tu situación ha mejorado
+                  y ya no corresponde el grado reconocido.
+                </p>
+                <h4>Qué hacer:</h4>
+                <ul>
+                  <li>Recopilar todos tus informes médicos actuales</li>
+                  <li>Acreditar que las limitaciones persisten</li>
+                  <li>Demostrar que sigues en tratamiento</li>
+                  <li>Si trabajas, explicar las adaptaciones necesarias</li>
+                </ul>
+                <p class="tip">
+                  <strong>💼 Trabajo y discapacidad:</strong> Trabajar no significa que hayas
+                  mejorado. Muchas personas con discapacidad trabajan con adaptaciones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Ventajas de Aumentar el Grado</h2>
+
+          <div class="ventajas-grado">
+            <div class="ventaja-section">
+              <h3>Pasar del 0-32% al 33% o superior</h3>
+              <div class="beneficios-grid">
+                <div class="beneficio-item">
+                  <span class="icon">💰</span>
+                  <div>
+                    <strong>Beneficios fiscales</strong>
+                    <p>Deducciones en IRPF, exención impuesto matriculación vehículos</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">💼</span>
+                  <div>
+                    <strong>Empleo</strong>
+                    <p>Acceso a cuota de reserva en empleo público (5%)</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">🚗</span>
+                  <div>
+                    <strong>Movilidad</strong>
+                    <p>Descuentos en transporte público, ayudas para vehículos</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">🏠</span>
+                  <div>
+                    <strong>Vivienda</strong>
+                    <p>Ayudas para adaptación, prioridad en VPO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ventaja-section">
+              <h3>Pasar del 33-64% al 65% o superior</h3>
+              <div class="beneficios-grid">
+                <div class="beneficio-item">
+                  <span class="icon">💵</span>
+                  <div>
+                    <strong>Prestaciones económicas</strong>
+                    <p>Acceso a prestación LISMI (si cumples requisitos)</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">🅿️</span>
+                  <div>
+                    <strong>Tarjeta de aparcamiento</strong>
+                    <p>Si hay movilidad reducida reconocida</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">📊</span>
+                  <div>
+                    <strong>Mayores deducciones fiscales</strong>
+                    <p>Incremento significativo en IRPF</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">🎯</span>
+                  <div>
+                    <strong>Más ayudas disponibles</strong>
+                    <p>Ayudas específicas de CCAA y municipios</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ventaja-section">
+              <h3>Pasar del 65-74% al 75% o más</h3>
+              <div class="beneficios-grid">
+                <div class="beneficio-item">
+                  <span class="icon">👤</span>
+                  <div>
+                    <strong>Complemento tercera persona</strong>
+                    <p>Si necesitas asistencia para actos esenciales</p>
+                  </div>
+                </div>
+                <div class="beneficio-item">
+                  <span class="icon">⬆️</span>
+                  <div>
+                    <strong>Máximo grado reconocido</strong>
+                    <p>Acceso a todas las prestaciones disponibles</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2>Cómo Te Ayudamos con la Revisión</h2>
+
+          <div class="proceso-revision">
+            <div class="paso-revision">
+              <div class="paso-num">1</div>
+              <div class="paso-info">
+                <h3>Evaluación de Tu Caso</h3>
+                <p>
+                  Analizamos tu situación actual vs. el grado reconocido. Estudiamos si hay
+                  base real para solicitar revisión por agravamiento.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-revision">
+              <div class="paso-num">2</div>
+              <div class="paso-info">
+                <h3>Documentación Actualizada</h3>
+                <p>
+                  Identificamos qué informes médicos necesitas actualizar, qué nuevos informes
+                  solicitar a especialistas y cómo acreditar el empeoramiento.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-revision">
+              <div class="paso-num">3</div>
+              <div class="paso-info">
+                <h3>Informe Pericial Comparativo</h3>
+                <p>
+                  Elaboramos un informe que compara tu situación anterior con la actual,
+                  fundamentando técnicamente el aumento de grado que te corresponde.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-revision">
+              <div class="paso-num">4</div>
+              <div class="paso-info">
+                <h3>Preparación para el Tribunal</h3>
+                <p>
+                  Te orientamos sobre cómo explicar tus limitaciones actuales, qué aspectos
+                  destacar del empeoramiento y cómo actuar en la comparecencia.
+                </p>
+              </div>
+            </div>
+
+            <div class="paso-revision">
+              <div class="paso-num">5</div>
+              <div class="paso-info">
+                <h3>Seguimiento y Recurso</h3>
+                <p>
+                  Si la revisión no es favorable, te asesoramos sobre la interposición de
+                  recursos. Si empeoran tu grado indebidamente, lo recurrimos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Situaciones Habituales de Revisión</h2>
+
+          <div class="situaciones">
+            <div class="situacion">
+              <h3>🔄 Enfermedades Degenerativas</h3>
+              <p>
+                Si tienes una enfermedad progresiva (esclerosis múltiple, Parkinson, ELA, etc.),
+                es normal que con el tiempo empeore tu situación y necesites revisar el grado.
+              </p>
+              <p class="recomendacion">
+                <strong>Recomendación:</strong> Solicita revisión cuando notes un empeoramiento
+                claro y objetivo, no ante fluctuaciones temporales.
+              </p>
+            </div>
+
+            <div class="situacion">
+              <h3>🆕 Nuevas Patologías</h3>
+              <p>
+                Has desarrollado nuevas enfermedades que no existían en la valoración anterior
+                y que suman limitaciones adicionales a las ya reconocidas.
+              </p>
+              <p class="recomendacion">
+                <strong>Recomendación:</strong> Asegúrate de tener diagnóstico confirmado e
+                informes de especialistas que acrediten las nuevas patologías.
+              </p>
+            </div>
+
+            <div class="situacion">
+              <h3>⚕️ Complicaciones de Tratamientos</h3>
+              <p>
+                Efectos secundarios graves de medicación, secuelas de cirugías o tratamientos
+                (como quimioterapia) que han generado nuevas limitaciones.
+              </p>
+              <p class="recomendacion">
+                <strong>Recomendación:</strong> Documenta los efectos secundarios con informes
+                médicos que los relacionen causalmente con los tratamientos.
+              </p>
+            </div>
+
+            <div class="situacion">
+              <h3>👶 Menores con Evolución</h3>
+              <p>
+                En niños y adolescentes, es habitual que se establezcan revisiones periódicas
+                al evolucionar su desarrollo y aparecer nuevas limitaciones.
+              </p>
+              <p class="recomendacion">
+                <strong>Recomendación:</strong> Mantén seguimiento continuo con especialistas
+                y acude a la revisión con informes del último año completo.
+              </p>
+            </div>
+          </div>
+
+          <h2>¿Cuándo NO Solicitar Revisión?</h2>
+
+          <div class="cuando-no">
+            <ul class="no-list">
+              <li>
+                <strong>❌ Sin empeoramiento real:</strong> Si tu situación es similar, espera
+                a tener cambios objetivos documentados.
+              </li>
+              <li>
+                <strong>❌ Sin informes actualizados:</strong> No solicites revisión sin tener
+                documentación médica reciente que acredite tu situación.
+              </li>
+              <li>
+                <strong>❌ Recién obtenido el grado:</strong> Salvo empeoramiento muy significativo,
+                espera al menos 1-2 años para que haya evolución demostrable.
+              </li>
+              <li>
+                <strong>❌ Mejora temporal:</strong> Si estás pasando por una fase mejor de una
+                enfermedad fluctuante, no es el mejor momento.
+              </li>
+              <li>
+                <strong>❌ Solo para beneficios concretos:</strong> Si solo quieres el 33% para
+                la tarjeta de aparcamiento pero no hay movilidad reducida, no procede.
+              </li>
+            </ul>
+          </div>
+
+          <h2>Riesgos de la Revisión</h2>
+
+          <div class="riesgos-box">
+            <h3>⚠️ Importante: La revisión puede bajar tu grado</h3>
+            <p>
+              Cuando solicitas una revisión por agravamiento o acudes a una revisión obligatoria,
+              el tribunal vuelve a evaluar tu situación completa. Aunque lo habitual en revisiones
+              voluntarias es que mantengan o aumenten el grado, existe la posibilidad de que lo
+              reduzcan si consideran que ha habido mejoría.
+            </p>
+            <p><strong>Cómo minimizar riesgos:</strong></p>
+            <ul>
+              <li>Solicita revisión solo con informes médicos sólidos que acrediten empeoramiento</li>
+              <li>Cuenta con un informe pericial que fundamente técnicamente el aumento</li>
+              <li>No solicites revisión si tu situación ha mejorado realmente</li>
+              <li>Prepara bien la comparecencia para explicar correctamente tus limitaciones</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="cta-card">
+            <h3>¿Necesitas Revisión?</h3>
+            <p>Analizamos tu caso gratis y te orientamos sobre tus posibilidades de éxito.</p>
+            <a href="/contacto" class="cta-button">Consulta Gratuita</a>
+          </div>
+
+          <div class="info-card checklist-card">
+            <h3>Checklist Antes de Solicitar</h3>
+            <ul class="checklist">
+              <li>✓ Empeoramiento objetivo demostrable</li>
+              <li>✓ Informes médicos actualizados (último año)</li>
+              <li>✓ Nuevos diagnósticos confirmados</li>
+              <li>✓ Aumento de medicación o tratamientos</li>
+              <li>✓ Mayor dependencia documentada</li>
+              <li>✓ Certificado actual de discapacidad</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Documentación Clave</h3>
+            <ul class="doc-list">
+              <li>Certificado actual de discapacidad</li>
+              <li>Informes médicos recientes (6-12 meses)</li>
+              <li>Nuevos diagnósticos</li>
+              <li>Pruebas actualizadas (analíticas, TAC, RM, etc.)</li>
+              <li>Informes de especialistas</li>
+              <li>Tratamientos actuales</li>
+              <li>Informes de capacidad funcional</li>
+            </ul>
+          </div>
+
+          <div class="info-card plazos-card">
+            <h3>Plazos</h3>
+            <ul class="plazos-list">
+              <li><strong>Solicitud:</strong> En cualquier momento</li>
+              <li><strong>Resolución:</strong> Máximo 6 meses</li>
+              <li><strong>Recurso:</strong> 30 días desde notificación</li>
+              <li><strong>Efectos:</strong> Desde resolución</li>
+            </ul>
+          </div>
+
+          <div class="info-card importante-card">
+            <h3>💡 Consejo del Experto</h3>
+            <p>
+              No solicites revisión "a ver qué pasa". Hazlo cuando realmente haya un empeoramiento
+              significativo y documentado. Un informe pericial bien elaborado puede marcar la
+              diferencia entre conseguir o no el aumento de grado.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes sobre Revisión</h2>
+      <div class="faq-grid">
+        {faqData.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.question}</h3>
+            <p class="faq-answer">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Ha Empeorado Tu Situación?</h2>
+      <p>Evaluamos si procede solicitar revisión y qué grado puedes conseguir</p>
+      <a href="/contacto" class="cta-button-large">Solicitar Evaluación Gratuita</a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    padding: var(--space-16) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .main-content h2 {
+    color: var(--primary-blue);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-6);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Tipos Revision */
+  .tipos-revision {
+    display: grid;
+    gap: var(--space-8);
+    margin: var(--space-8) 0;
+  }
+
+  .tipo-card {
+    background: var(--white);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .tipo-header {
+    padding: var(--space-6);
+    color: var(--white);
+  }
+
+  .tipo-header h3 {
+    margin: 0;
+    font-size: var(--text-2xl);
+    color: var(--white);
+  }
+
+  .agravamiento { background: linear-gradient(135deg, #059669, #047857); }
+  .obligatoria { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .mejoria { background: linear-gradient(135deg, #F59E0B, #D97706); }
+
+  .tipo-content {
+    padding: var(--space-6);
+  }
+
+  .tipo-desc {
+    font-size: var(--text-lg);
+    color: var(--medium-gray);
+    margin-bottom: var(--space-4);
+  }
+
+  .tipo-content h4 {
+    color: var(--primary-blue);
+    margin: var(--space-6) 0 var(--space-3) 0;
+    font-size: var(--text-lg);
+  }
+
+  .tipo-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .tipo-content li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-7);
+    position: relative;
+    color: var(--dark-gray);
+  }
+
+  .tipo-content li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+  }
+
+  .tip {
+    background: var(--light-blue);
+    padding: var(--space-4);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+  }
+
+  /* Ventajas Grado */
+  .ventajas-grado {
+    margin: var(--space-8) 0;
+  }
+
+  .ventaja-section {
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .ventaja-section h3 {
+    color: var(--primary-green);
+    font-size: var(--text-2xl);
+    margin: 0 0 var(--space-6) 0;
+    text-align: center;
+  }
+
+  .beneficios-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .beneficios-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .beneficio-item {
+    display: flex;
+    gap: var(--space-3);
+    background: var(--white);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .beneficio-item .icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .beneficio-item strong {
+    display: block;
+    color: var(--primary-blue);
+    margin-bottom: var(--space-1);
+  }
+
+  .beneficio-item p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--medium-gray);
+  }
+
+  /* Proceso Revision */
+  .proceso-revision {
+    margin: var(--space-8) 0;
+  }
+
+  .paso-revision {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: var(--light-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  .paso-num {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    flex-shrink: 0;
+  }
+
+  .paso-info h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-2) 0;
+  }
+
+  .paso-info p {
+    margin: 0;
+  }
+
+  /* Situaciones */
+  .situaciones {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .situacion {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .situacion h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .situacion p {
+    margin-bottom: var(--space-3);
+  }
+
+  .recomendacion {
+    background: var(--light-green);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin: var(--space-3) 0 0 0;
+  }
+
+  /* Cuando No */
+  .cuando-no {
+    background: var(--light-gray);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    margin: var(--space-8) 0;
+  }
+
+  .no-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .no-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-gray);
+  }
+
+  .no-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Riesgos Box */
+  .riesgos-box {
+    background: #FEF3C7;
+    border: 2px solid #F59E0B;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin: var(--space-8) 0;
+  }
+
+  .riesgos-box h3 {
+    color: #D97706;
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .riesgos-box ul {
+    margin-top: var(--space-3);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-card,
+  .info-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-card h3 {
+    color: var(--white);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .cta-card p {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .info-card h3 {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-card li {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--dark-gray);
+  }
+
+  .checklist-card {
+    background: var(--light-green);
+    border-color: var(--primary-green);
+  }
+
+  .importante-card {
+    background: var(--light-blue);
+    border: 2px solid var(--primary-blue);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    background-color: var(--light-gray);
+    padding: var(--space-16) 0;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .faq-question {
+    color: var(--primary-blue);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-3) 0;
+  }
+
+  .faq-answer {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: var(--space-20) 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-section p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-button-large {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .cta-button-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+</style>
