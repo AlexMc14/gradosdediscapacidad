@@ -7,9 +7,9 @@ export async function getStaticPaths() {
   const provinciasEntries = await getCollection('provincias');
 
   console.log('Total provincias encontradas:', provinciasEntries.length);
-  console.log('Primeras 5 IDs:', provinciasEntries.slice(0, 5).map(e => e.id));
+  console.log('Primeras 5 IDs:', provinciasEntries.slice(0, 5).map((e: CollectionEntry<'provincias'>) => e.id));
 
-  return provinciasEntries.map((entry) => {
+  return provinciasEntries.map((entry: CollectionEntry<'provincias'>) => {
     // Remove .md extension from entry.id to get the slug
     const slug = entry.id.replace(/\.md$/, '');
 

@@ -49,14 +49,9 @@ const faqSchema = generateFAQSchema({ questions: faqData });
       <div class="services-grid">
         {serviciosData.map((servicio) => (
           <article class="service-card">
-            <div class="service-icon">{servicio.icon}</div>
-            <h2>{servicio.title}</h2>
-            <p class="service-description">{servicio.description}</p>
-            <ul class="service-features">
-              {servicio.features?.map((feature: string) => (
-                <li>{feature}</li>
-              ))}
-            </ul>
+            <div class="service-icon">{servicio.icono}</div>
+            <h2>{servicio.titulo}</h2>
+            <p class="service-description">{servicio.descripcion}</p>
             <a href={servicio.url} class="service-link">
               Más información →
             </a>

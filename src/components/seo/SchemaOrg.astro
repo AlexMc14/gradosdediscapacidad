@@ -11,4 +11,4 @@ const schemaData = Array.isArray(schema)
   : { '@context': 'https://schema.org', ...schema };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schemaData)} />

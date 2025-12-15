@@ -4,13 +4,13 @@ import Button from '@components/ui/Button.astro';
 import serviciosData from '@data/servicios.json';
 import testimoniosData from '@data/testimonios.json';
 import faqData from '@data/faq.json';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 // Obtener posts destacados del blog
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getCollection('blog', ({ data }: CollectionEntry<'blog'>) => !data.draft);
 const featuredPosts = allPosts
-  .filter(post => post.data.featured)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter((post: CollectionEntry<'blog'>) => post.data.featured)
+  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 ---
 
@@ -165,7 +165,7 @@ const featuredPosts = allPosts
           <p>Información actualizada sobre discapacidad</p>
         </div>
         <div class="blog-grid">
-          {featuredPosts.map((post) => (
+          {featuredPosts.map((post: CollectionEntry<'blog'>) => (
             <article class="blog-card">
               <div class="blog-category">{post.data.category}</div>
               <h3>{post.data.title}</h3>

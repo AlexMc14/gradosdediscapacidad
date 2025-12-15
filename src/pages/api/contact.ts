@@ -133,6 +133,7 @@ export const POST: APIRoute = async ({ request }) => {
 };
 
 // Helper function to generate email template (for future use)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function generateEmailTemplate(data: {
   nombre: string;
   email: string;
